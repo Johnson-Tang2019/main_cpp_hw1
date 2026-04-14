@@ -176,6 +176,8 @@ PointCloudData PointCloudData::voxelFilter(double voxelSize) const {
     return result;
 }
 
+
+// 统计离群点
 PointCloudData PointCloudData::statisticalOutlierRemoval(int k, double stdDev) const{
     int n = points.size();
     if (n < k) return *this;
