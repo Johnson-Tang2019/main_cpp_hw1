@@ -1,0 +1,61 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MainHomework",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "MainHomework::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MainHomework-Debug-d28892799034b8291c89.json",
+					"name" : "MainHomework",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/2025302132072_\u6c64\u9a8f_\u5927\u4f5c\u4e1a/build",
+		"source" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/2025302132072_\u6c64\u9a8f_\u5927\u4f5c\u4e1a"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	}
+}
