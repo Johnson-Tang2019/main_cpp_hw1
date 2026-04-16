@@ -5,6 +5,7 @@
 #include<fstream>
 #include <chrono>
 #include <iomanip>
+#include <format>
 
 
 class SatelliteImage : public DataObject {

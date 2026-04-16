@@ -1,4 +1,4 @@
-#include "SatelliteImage.h"
+#include "../include/SatelliteImage.h"
 
 // 构造函数
 SatelliteImage:: SatelliteImage(const std::string& id, const std::string& name, const std::string& path,
@@ -34,7 +34,7 @@ void SatelliteImage::display() const {
     std::cout << "SatelliteImage: " << name << " (" << id << ")\n";
     std::cout << "Path: " << path << "\n";  
     std::cout << "Size: " << size << " MB\n";
-    std::cout << "Created: " << ctime(&createTime);
+    std::cout << "Created: " << std::format("{:%F %T}", acquisitionTime);
     std::cout << "Dimensions: " << width << "x" << height << " Bands: " << bands << "\n";
     std::cout << "Sensor: " << sensorType << " Cloud Cover: " <<
                 cloudCover << "% Acquisition Time: " << acquisitionTime << "\n";
@@ -69,7 +69,7 @@ bool SatelliteImage::exportData(const std::string& format) const{
         outFile << "SatelliteImage: " << name << " (" << id << ")\n";
         outFile << "Path: " << path << "\n";  
         outFile << "Size: " << size << " MB\n";
-        outFile << "Created: " << ctime(&createTime);
+        outFile << "Created: " << std::format("{:%F %T}", acquisitionTime);
         
         
 
@@ -345,7 +345,7 @@ double SatelliteImage::getMaxValue() const {
     double maxVal = std::numeric_limits<double>::lowest();
     for (const auto& row : data) {
         for (const auto& pixel : row) {
-            maxVal = std::max({maxVal, pixel.red, pixel.green, pixel.blue, pixel.nir, pixel.thermal});
+            maxVal = std::max({maxVal, pixel.getRed(), pixel.getGreen(), pixel.getBlue(), pixel.getNir(), pixel.getThermal()});
         }
     }
     return maxVal;
@@ -394,11 +394,11 @@ void SatelliteImage::setCloudCover(double cover) {
     cloudCover = cover;
 }
 
-void SatelliteImage::setAcquisitionTime(double time) {
+void SatelliteImage::setAcquisitionTime(time_t time) {
     if (time < 0) {
         throw std::invalid_argument("Acquisition time cannot be negative");
     }
-    acquisitionTime = static_cast<time_t>(time);
+    acquisitionTime = time;
 }
 
 
@@ -406,10 +406,16 @@ void SatelliteImage::setAcquisitionTime(double time) {
 SatelliteImage SatelliteImage::createRandomImage
     (const std::string& id, int w, int h) {
     // 这里可以实现随机影像的创建逻辑
-    return SatelliteImage(id, w, h, 5, "RandomSensor"
-        , time(nullptr));
+    return SatelliteImage(id, "Name:", "Path:", w, h, 5, "RandomSensor", 
+        time(nullptr));
 }
 
+static SatelliteImage createConstantImage(const std::string& id, int w, int h, 
+                                               const Pixel<double>& value) {
+    // 这里可以实现常量影像的创建逻辑
+    return SatelliteImage(id, "Name:", "Path:", w, h, 5, "ConstantSensor", 
+        time(nullptr));
+}
 
 
 

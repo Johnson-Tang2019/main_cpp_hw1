@@ -1,4 +1,4 @@
-#include "PointCloudData.h"
+#include "../include/PointCloudData.h"
 
 Point3D::Point3D(double x, double y, double z, double intensity, int cls)
     : x(x), y(y), z(z), intensity(intensity), classification(cls) {}

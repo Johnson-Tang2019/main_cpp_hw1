@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 file(GLOB SOURCES "src/*.cpp")
 
 # 5. 指定头文件包含路径 (相当于 -I)
-include_directories(include)
+include_directories(C:/Users/hans/Desktop/main_hw1/main_cpp_hw1/include)
 
 # 6. 生成可执行程序
 add_executable(${PROJECT_NAME} ${SOURCES})
