@@ -3,6 +3,8 @@
 #include "Pixel.h"
 #include<iostream>
 #include<fstream>
+#include <chrono>
+#include <iomanip>
 
 
 class SatelliteImage : public DataObject {
@@ -12,7 +14,7 @@ private:
     int bands;                          // 波段数量
     std::string sensorType;                  // 传感器类型
     double cloudCover;                  // 云量百分比
-    double acquisitionTime;             // 采集时间（儒略日）
+    time_t acquisitionTime;             // 采集时间（儒略日）
     std::vector<std::vector<Pixel<double>>> data; // 影像数据矩阵
     std::vector<double> bandStatistics;      // 波段统计信息
     
@@ -23,13 +25,14 @@ private:
 public:
     // 构造函数
     SatelliteImage(const std::string& id, const std::string& name, const std::string& path,
-                   int w, int h, int b, const std::string& sensor, double time = 0);
+                   int w, int h, int b, const std::string& sensor, 
+                   time_t time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()));
     
     // 拷贝构造函数
     SatelliteImage(const SatelliteImage& other);
     
     // 析构函数
-    ~SatelliteImage();
+    ~SatelliteImage() {};
     
     // 赋值运算符
     SatelliteImage& operator=(const SatelliteImage& other);
@@ -94,11 +97,11 @@ public:
     int getBands() const { return bands; }
     std::string getSensorType() const { return sensorType; }
     double getCloudCover() const { return cloudCover; }
-    double getAcquisitionTime() const { return acquisitionTime; }
+    time_t getAcquisitionTime() const { return acquisitionTime; }
     
     // 设置器（带验证）
     void setCloudCover(double cover);
-    void setAcquisitionTime(double time);
+    void setAcquisitionTime(time_t time);
     
     // 静态工厂方法
     static SatelliteImage createRandomImage(const std::string& id, int w, int h);

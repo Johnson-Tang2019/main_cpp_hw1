@@ -1,20 +1,21 @@
-#include <iostream>
+#ifndef PIXEL_H
+#define PIXEL_H
 
-// 先声明友元函数
-template<typename T>
-std::ostream& operator<<(std::ostream& os, const Pixel<T>& pixel);
+#include <iostream>
+#include <ctime>
+
 
 template<typename T>
 class Pixel {
 private:
     T red, green, blue, nir;     // 多光谱波段
     T thermal;                    // 热红外波段
-    double timestamp;             // 采集时间戳
+    time_t timestamp;             // 采集时间戳
     mutable int accessCount;      // 访问计数（mutable演示）
     
 public:
     // 构造函数（支持默认参数）
-    Pixel(T r = 0, T g = 0, T b = 0, T n = 0, T t = 0, double ts = 0) 
+    Pixel(T r = 0, T g = 0, T b = 0, T n = 0, T t = 0, time_t ts = time(nullptr)) 
         : red(r), green(g), blue(b), nir(n), thermal(t), timestamp(ts), accessCount(0) {};
     
     // 拷贝构造函数
@@ -83,9 +84,9 @@ public:
     
     // 类型转换运算符
     operator T() const { return getBrightness(); }  // 转换为亮度值
-    operator string() const { 
-        return "Pixel" + to_string(red) + "," + to_string(green) + "," + to_string(blue) + 
-               "," + to_string(nir) + "," + to_string(thermal); 
+    operator std::string() const { 
+        return "Pixel" + std::to_string(red) + "," + std::to_string(green) + "," + std::to_string(blue) + 
+               "," + std::to_string(nir) + "," + std::to_string(thermal); 
     }                         // 转换为字符串
     
     // 下标运算符（访问波段）
@@ -112,7 +113,7 @@ public:
     }
     
     // 友元函数（流输入输出）
-    friend ostream& operator<<(ostream& os, const Pixel<T>& pixel) {
+    friend std::ostream& operator<<(std::ostream& os, const Pixel<T>& pixel) {
         os << "R:" << pixel.red << " G:" << pixel.green 
            << " B:" << pixel.blue << " NIR:" << pixel.nir
            << " Thermal:" << pixel.thermal;
@@ -163,3 +164,5 @@ public:
     void setNir(T n) { nir = n; }
     void setThermal(T t) { thermal = t; }
 };
+
+#endif // PIXEL_H

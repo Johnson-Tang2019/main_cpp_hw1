@@ -1,3 +1,5 @@
+#ifndef ALGORITHMS_H
+#define ALGORITHMS_H
 #include <vector>
 
 namespace RemoteSensingAlgorithms {
@@ -27,3 +29,5 @@ namespace RemoteSensingAlgorithms {
     template<typename T>
     std::vector<double> calculateHistogram(const std::vector<T>& data, int bins);
 }
+
+#endif // ALGORITHMS_H

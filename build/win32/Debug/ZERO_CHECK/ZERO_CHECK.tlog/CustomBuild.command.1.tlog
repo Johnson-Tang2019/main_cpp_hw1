@@ -1,0 +1,10 @@
+^C:\USERS\HANS\DESKTOP\MAIN_HW1\MAIN_CPP_HW1\BUILD\CMAKEFILES\5829A0D1D526A1487BAA65066BC9B00B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/hans/Desktop/main_hw1/main_cpp_hw1 -BC:/Users/hans/Desktop/main_hw1/main_cpp_hw1/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/hans/Desktop/main_hw1/main_cpp_hw1/build/MainHomework.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

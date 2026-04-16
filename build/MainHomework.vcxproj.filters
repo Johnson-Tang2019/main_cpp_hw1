@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\src\DataObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\src\PointCloudData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\src\SatelliteImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{A787AB0D-990E-3AE2-9B34-E6242E993442}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

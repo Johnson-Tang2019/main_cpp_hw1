@@ -1,0 +1,20 @@
+================================================================================
+Linker Errors
+Generated: 2026-04-16T03:24:36.917Z
+Total Errors: 5
+================================================================================
+
+[LNK2001] (MSVC)
+无法解析的外部符号 "public: virtual double __thiscall SatelliteImage::getQualityScore(void)const " (?getQualityScore@SatelliteImage@@UBENXZ) [C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\build\MainHomework.vcxproj]
+
+[LNK2001] (MSVC)
+无法解析的外部符号 "public: virtual bool __thiscall SatelliteImage::isValid(void)const " (?isValid@SatelliteImage@@UBE_NXZ) [C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\build\MainHomework.vcxproj]
+
+[LNK2019] (MSVC)
+无法解析的外部符号 "public: __thiscall Pixel<double>::~Pixel<double>(void)" (??1?$Pixel@N@@QAE@XZ)，函数 "public: virtual void __thiscall SatelliteImage::display(void)const " (?display@SatelliteImage@@UBEXXZ) 中引用了该符号 [C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\build\MainHomework.vcxproj]
+
+[LNK2001] (MSVC)
+无法解析的外部符号 "public: __thiscall Pixel<double>::~Pixel<double>(void)" (??1?$Pixel@N@@QAE@XZ) [C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\build\MainHomework.vcxproj]
+
+[LNK1120] (MSVC)
+3 个无法解析的外部命令 [C:\Users\hans\Desktop\main_hw1\main_cpp_hw1\build\MainHomework.vcxproj]
