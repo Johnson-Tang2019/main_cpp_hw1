@@ -50,7 +50,9 @@ void PointCloudData::display() const {
     std::cout << "PointCloudData: " << name << " (" << id << ")\n";
     std::cout << "Path: " << path << "\n";
     std::cout << "Size: " << size << " MB\n";
-    std::cout << "Created: " << ctime(&createTime);
+    struct tm timeInfo;
+    localtime_s(&timeInfo, &createTime);
+    std::cout << "Created: " << std::put_time(&timeInfo, "%Y-%m-%d %H:%M:%S");
     std::cout << "Points: " << points.size() << "\n";
     std::cout << "Bounds: X[" << minX << ", " << maxX << "] Y[" 
               << minY << ", " << maxY << "] Z[" 
@@ -76,7 +78,9 @@ bool PointCloudData::exportData(const std::string& format) const {
         outFile << "PointCloudData: " << name << " (" << id << ")\n";
         outFile << "Path: " << path << "\n";
         outFile << "Size: " << size << " MB\n";
-        outFile << "Created: " << ctime(&createTime);
+        struct tm timeInfo;
+        localtime_s(&timeInfo, &createTime);
+        outFile << "Created: " << std::put_time(&timeInfo, "%Y-%m-%d %H:%M:%S");
         outFile << "Bounds: X[" << minX << ", " << maxX << "] Y[" 
               << minY << ", " << maxY << "] Z[" 
               << minZ << ", " << maxZ << "]\n";

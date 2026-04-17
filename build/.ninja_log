@@ -1,0 +1,8 @@
+# ninja log v6
+11	558	7981089383692022	CMakeFiles/MainHomework.dir/src/DataObject.cpp.obj	ee3260e0c0cfb4b8
+14	481	7981091914039133	CMakeFiles/MainHomework.dir/src/PointCloudData.cpp.obj	f63cca854bedaa41
+18	789	7981089383773098	CMakeFiles/MainHomework.dir/src/SatelliteImage.cpp.obj	7fe9ce50c796db6d
+21	629	7981089383798541	CMakeFiles/MainHomework.dir/src/main.cpp.obj	3a3d46f1610d46c6
+32	341	7981093256019264	CMakeFiles/MainHomework.dir/src/main.cpp.obj	3a3d46f1610d46c6
+28	502	7981093255987834	CMakeFiles/MainHomework.dir/src/SatelliteImage.cpp.obj	7fe9ce50c796db6d
+502	875	7981093260716911	MainHomework.exe	1d8f7cfd1ff4cd9b

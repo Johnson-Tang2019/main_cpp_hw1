@@ -8,6 +8,10 @@
 #include <numeric>
 #include <algorithm>
 #include <cmath>
+#include <chrono>
+#include <iomanip>
+#include <format>
+#include <ctime>
 
 struct Point3D {
     double x, y, z;      // 三维坐标

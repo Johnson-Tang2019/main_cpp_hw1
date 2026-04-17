@@ -23,7 +23,7 @@ public:
     nir(other.nir), thermal(other.thermal), timestamp(other.timestamp), accessCount(0) {};
     
     // 析构函数
-    ~Pixel();
+    ~Pixel() {};
     
     // 赋值运算符
     Pixel<T>& operator= (const Pixel<T>& other) {

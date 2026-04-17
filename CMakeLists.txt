@@ -17,5 +17,14 @@ include_directories(C:/Users/hans/Desktop/main_hw1/main_cpp_hw1/include)
 # 6. 生成可执行程序
 add_executable(${PROJECT_NAME} ${SOURCES})
 
+# 使用 CMAKE_CURRENT_SOURCE_DIR 确保路径从当前 CMakeLists 所在位置开始找
+target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+
 # 7. 链接库 (如果有需要)
 # target_link_libraries(${PROJECT_NAME} PRIVATE some_library)
+
+
+
+
+

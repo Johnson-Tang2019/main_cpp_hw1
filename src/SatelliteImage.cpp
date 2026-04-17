@@ -34,7 +34,9 @@ void SatelliteImage::display() const {
     std::cout << "SatelliteImage: " << name << " (" << id << ")\n";
     std::cout << "Path: " << path << "\n";  
     std::cout << "Size: " << size << " MB\n";
-    std::cout << "Created: " << std::format("{:%F %T}", acquisitionTime);
+    struct tm timeInfo;
+    localtime_s(&timeInfo, &acquisitionTime);
+    std::cout << "Created: " << std::put_time(&timeInfo, "%Y-%m-%d %H:%M:%S");
     std::cout << "Dimensions: " << width << "x" << height << " Bands: " << bands << "\n";
     std::cout << "Sensor: " << sensorType << " Cloud Cover: " <<
                 cloudCover << "% Acquisition Time: " << acquisitionTime << "\n";
@@ -69,8 +71,10 @@ bool SatelliteImage::exportData(const std::string& format) const{
         outFile << "SatelliteImage: " << name << " (" << id << ")\n";
         outFile << "Path: " << path << "\n";  
         outFile << "Size: " << size << " MB\n";
-        outFile << "Created: " << std::format("{:%F %T}", acquisitionTime);
-        
+        struct tm timeInfo;
+        localtime_s(&timeInfo, &acquisitionTime);
+        outFile << "Created: " << std::put_time(&timeInfo, "%Y-%m-%d %H:%M:%S");
+        return true;
         
 
     } else {
@@ -274,7 +278,8 @@ std::vector<std::vector<double>> SatelliteImage::calculateNDWI() const {
     return ndwi;
 }
 
-std::vector<std::vector<double>> SatelliteImage::calculateSAVI(double L = 0.5) const {
+
+std::vector<std::vector<double>> SatelliteImage::calculateSAVI(double L) const {
     if (bands != 4) {
         throw std::invalid_argument("SAVI calculation requires 4 bands (red, green, blue, nir)");
     }

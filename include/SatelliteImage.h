@@ -6,6 +6,7 @@
 #include <chrono>
 #include <iomanip>
 #include <format>
+#include <ctime>
 
 
 class SatelliteImage : public DataObject {
