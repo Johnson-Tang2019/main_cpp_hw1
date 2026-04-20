@@ -20,11 +20,8 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 # 使用 CMAKE_CURRENT_SOURCE_DIR 确保路径从当前 CMakeLists 所在位置开始找
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
+set(OpenCV_DIR "C:/Program Files/opencv/build/x64/vc16/lib")
+find_package(OpenCV REQUIRED)
 
-# 7. 链接库 (如果有需要)
-# target_link_libraries(${PROJECT_NAME} PRIVATE some_library)
-
-
-
-
-
+# 7. 链接库 
+target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS})
