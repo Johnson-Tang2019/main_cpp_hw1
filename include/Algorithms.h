@@ -6,7 +6,9 @@ namespace RemoteSensingAlgorithms {
 // 植被指数
 double calculateNDVI(double red, double nir) { return (nir - red) / (nir + red); };
 double calculateNDWI(double green, double nir) { return (green - nir) / (nir + green); };
-double calculateSAVI(double red, double nir, double L = 0.5) { return (nir - red) / (nir + red + L) * (1 + L); };
+double calculateSAVI(double red, double nir, double L = 0.5) {
+    return (nir - red) / (nir + red + L) * (1 + L);
+};
 double calculateEVI(double blue, double red, double nir) {
     return 2.5f * (nir - red) / (nir + 6 * red - 7.5 * blue + 1);
 };
@@ -57,7 +59,8 @@ std::vector<int> kMeansClustering(const std::vector<T> &data, int k, int maxIter
         }
 
         // 如果本轮没有点改变分类，提前结束
-        if (!changed) break;
+        if (!changed)
+            break;
 
         // B. 更新步骤：重新计算质心
         std::vector<double> newSum(k, 0.0);
@@ -80,15 +83,15 @@ std::vector<int> kMeansClustering(const std::vector<T> &data, int k, int maxIter
 // 图像处理
 template <typename T>
 std::vector<std::vector<T>> convolve(const std::vector<std::vector<T>> &image,
-                                     const std::vector<std::vector<double>> &kernel) {
+                                     const std::vector<std::vector<double>> &kernelData) {
     int rows = image.size();
     int cols = image[0].size();
 
     // 1. 将 std::vector 转换为 cv::Mat
-    cv::Mat matImage(rows, cols, CV_32F);
+    cv::Mat matImage(rows, cols, CV_64F);
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            matImage.at<float>(i, j) = static_cast<float>(image[i][j]);
+            matImage.at<double>(i, j) = static_cast<double>(image[i][j]);
         }
     }
 
@@ -98,13 +101,13 @@ std::vector<std::vector<T>> convolve(const std::vector<std::vector<T>> &image,
     cv::Mat kernel(kRows, kCols, CV_64F);
     for (int i = 0; i < kRows; ++i) {
         for (int j = 0; j < kCols; ++j) {
-            kernel.at<double>(i, j) = kernelData[i][j];
+            kernelData.at<double>(i, j) = kernelData[i][j];
         }
     }
 
     // 3. 调用 OpenCV 卷积
     cv::Mat resultMat;
-    cv::filter2D(matImage, resultMat, -1, kernel);
+    cv::filter2D(matImage, resultMat, -1, kernelData);
 
     // 4. 将结果转回 std::vector
     std::vector<std::vector<T>> result(rows, std::vector<T>(cols));

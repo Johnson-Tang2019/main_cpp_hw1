@@ -21,7 +21,15 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 set(OpenCV_DIR "C:/Program Files/opencv/build/x64/vc16/lib")
+# 指定 Qt 安装路径
+set(CMAKE_PREFIX_PATH "C:/Qt/6.11.0/mingw_64")
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
 find_package(OpenCV REQUIRED)
 
 # 7. 链接库 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)

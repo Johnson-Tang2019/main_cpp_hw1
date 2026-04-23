@@ -7,7 +7,8 @@
 #include <iomanip>
 #include <format>
 #include <ctime>
-
+#include <opencv2/opencv.hpp>
+#include <random>
 
 class SatelliteImage : public DataObject {
 private:
