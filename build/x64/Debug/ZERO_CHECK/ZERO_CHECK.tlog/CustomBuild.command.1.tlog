@@ -1,6 +1,6 @@
-^C:\USERS\JS\DOCUMENTS\作业\C++\2025302132072_汤骏_大作业\BUILD\CMAKEFILES\9EA2ADE21299554ADC3470BEC64E448D\GENERATE.STAMP.RULE
+^C:\USERS\JS\DOCUMENTS\作业\C++\MAIN_HW\BUILD\CMAKEFILES\1D364B76694AB51888A24091349F86F1\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/js/Documents/作业/c++/2025302132072_汤骏_大作业 -BC:/Users/js/Documents/作业/c++/2025302132072_汤骏_大作业/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/js/Documents/作业/c++/2025302132072_汤骏_大作业/build/MainHomework.slnx
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/js/Documents/作业/c++/Main_HW -BC:/Users/js/Documents/作业/c++/Main_HW/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

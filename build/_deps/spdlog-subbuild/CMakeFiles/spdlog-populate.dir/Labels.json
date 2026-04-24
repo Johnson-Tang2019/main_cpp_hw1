@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/a578ba270a1ea23b3a0317d11c996930/spdlog-populate.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/72713061cebc0098714e8227a412db1c/spdlog-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"spdlog-populate"
+		],
+		"name" : "spdlog-populate"
+	}
+}

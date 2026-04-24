@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\CMakeFiles\9ea2ade21299554adc3470bec64e448d\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\CMakeFiles\1d364b76694ab51888a24091349f86f1\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{3DBBA848-2E35-3773-BCDF-9B4294B88199}</UniqueIdentifier>
+      <UniqueIdentifier>{51B81EC7-E8CE-3736-8DF1-E7E310DB30DC}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

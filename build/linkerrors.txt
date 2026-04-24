@@ -1,35 +1,8 @@
 ================================================================================
 Linker Errors
-Generated: 2026-04-22T07:25:36.678Z
-Total Errors: 10
+Generated: 2026-04-24T07:23:27.976Z
+Total Errors: 1
 ================================================================================
 
-[LNK2019] (MSVC)
-无法解析的外部符号 "void __cdecl cv::error(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,char const *,int)" (?error@cv@@YAXHABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD1H@Z)，函数 "public: double & __thiscall cv::Mat::at<double>(int,int)" (??$at@N@Mat@cv@@QAEAANHH@Z) 中引用了该符号 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK2019] (MSVC)
-无法解析的外部符号 "public: __thiscall cv::Mat::Mat(void)" (??0Mat@cv@@QAE@XZ)，函数 "public: void __thiscall SatelliteImage::resample(int,int)" (?resample@SatelliteImage@@QAEXHH@Z) 中引用了该符号 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK2019] (MSVC)
-无法解析的外部符号 "public: __thiscall cv::Mat::Mat(int,int,int)" (??0Mat@cv@@QAE@HHH@Z)，函数 "public: void __thiscall SatelliteImage::applyGaussianBlur(double)" (?applyGaussianBlur@SatelliteImage@@QAEXN@Z) 中引用了该符号 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK2019] (MSVC)
-无法解析的外部符号 "public: __thiscall cv::Mat::Mat(class cv::Mat const &)" (??0Mat@cv@@QAE@ABV01@@Z)，函数 "public: static void __cdecl std::_Default_allocator_traits<class std::allocator<class cv::Mat> >::construct<class cv::Mat,class cv::Mat const &>(class std::allocator<class cv::Mat> &,class cv::Mat * const,class cv::Mat const &)" (??$construct@VMat@cv@@ABV12@@?$_Default_allocator_traits@V?$allocator@VMat@cv@@@std@@@std@@SAXAAV?$allocator@VMat@cv@@@1@QAVMat@cv@@ABV34@@Z) 中引用了该符号 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK2019] (MSVC)
-无法解析的外部符号 "public: __thiscall cv::Mat::~Mat(void)" (??1Mat@cv@@QAE@XZ)，函数 "public: void __thiscall SatelliteImage::applyGaussianBlur(double)" (?applyGaussianBlur@SatelliteImage@@QAEXN@Z) 中引用了该符号 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK2019] (MSVC)
-无法解析的外部符号 "void __cdecl cv::medianBlur(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,int)" (?medianBlur@cv@@YAXABV_InputArray@debug_build_guard@1@ABV_OutputArray@31@H@Z)，函数 "public: void __thiscall SatelliteImage::applyMedianFilter(int)" (?applyMedianFilter@SatelliteImage@@QAEXH@Z) 中引用了该符号 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK2019] (MSVC)
-无法解析的外部符号 "void __cdecl cv::GaussianBlur(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,class cv::Size_<int>,double,double,int,enum cv::AlgorithmHint)" (?GaussianBlur@cv@@YAXABV_InputArray@debug_build_guard@1@ABV_OutputArray@31@V?$Size_@H@1@NNHW4AlgorithmHint@1@@Z)，函数 "public: void __thiscall SatelliteImage::applyGaussianBlur(double)" (?applyGaussianBlur@SatelliteImage@@QAEXN@Z) 中引用了该符号 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK2019] (MSVC)
-无法解析的外部符号 "void __cdecl cv::resize(class cv::debug_build_guard::_InputArray const &,class cv::debug_build_guard::_OutputArray const &,class cv::Size_<int>,double,double,int)" (?resize@cv@@YAXABV_InputArray@debug_build_guard@1@ABV_OutputArray@31@V?$Size_@H@1@NNH@Z)，函数 "public: void __thiscall SatelliteImage::resample(int,int)" (?resample@SatelliteImage@@QAEXHH@Z) 中引用了该符号 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK4272] (MSVC)
-库计算机类型“x64”与目标计算机类型“x86”冲突 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
-
-[LNK1120] (MSVC)
-8 个无法解析的外部命令 [C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\build\MainHomework.vcxproj]
+[LNK1168] (MSVC)
+无法打开 C:\Users\js\Documents\作业\c++\Main_HW\build\Debug\MainHomework.exe 进行写入 [C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework.vcxproj]

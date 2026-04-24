@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\ea38b947cb93b1868a3712e1640910de\spdlog-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\ea38b947cb93b1868a3712e1640910de\spdlog-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\ea38b947cb93b1868a3712e1640910de\spdlog-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\ea38b947cb93b1868a3712e1640910de\spdlog-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\ea38b947cb93b1868a3712e1640910de\spdlog-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\ea38b947cb93b1868a3712e1640910de\spdlog-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\ea38b947cb93b1868a3712e1640910de\spdlog-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\ea38b947cb93b1868a3712e1640910de\spdlog-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\72713061cebc0098714e8227a412db1c\spdlog-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\a578ba270a1ea23b3a0317d11c996930\spdlog-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\js\Documents\作业\c++\Main_HW\build\_deps\spdlog-subbuild\CMakeFiles\spdlog-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C484D806-D96F-37EE-8F03-E1C428F53B69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

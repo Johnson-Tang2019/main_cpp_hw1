@@ -1,0 +1,10 @@
+^C:\USERS\JS\DOCUMENTS\作业\C++\MAIN_HW\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\A578BA270A1EA23B3A0317D11C996930\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild -BC:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/spdlog-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -8,6 +8,39 @@ SatelliteImage::SatelliteImage(const std::string &id, const std::string &name,
     : DataObject(id, name, path), width(w), height(h), bands(b), sensorType(sensor),
       acquisitionTime(time) {}
 
+// 从 OpenCV 矩阵创建图像
+SatelliteImage::SatelliteImage(const std::string &id, const std::string &name,
+                               const std::string &path, cv::Mat &mat)
+    : DataObject(id, name, path), width(mat.cols), height(mat.rows), bands(mat.channels()),
+      sensorType("Openellite"), acquisitionTime(0), mat(mat) {
+
+    
+    data.resize(height);
+    spdlog::debug("初始化遥感影像: {}", path);
+
+    for (int i = 0; i < height; ++i) {
+        data[i].resize(width);
+        for (int j = 0; j < width; ++j) {
+            auto &p = data[i][j];
+            p.setRed(mat.at<Vec5d>(i, j)[0]);
+            p.setGreen(mat.at<Vec5d>(i, j)[1]);
+            p.setBlue(mat.at<Vec5d>(i, j)[2]);
+            if (bands > 3)
+                p.setNir(mat.at<Vec5d>(i, j)[3]);
+            else
+                p.setNir(0);
+            if (bands > 4)
+                p.setThermal(mat.at<Vec5d>(i, j)[4]);
+            else
+                p.setThermal(0);
+        }
+    }
+
+    
+    // 初始化统计信息
+    bandStatistics.resize(bands);
+}
+
 // 拷贝构造函数
 SatelliteImage::SatelliteImage(const SatelliteImage &other)
     : DataObject(other), width(other.width), height(other.height), bands(other.bands),
@@ -352,6 +385,20 @@ double SatelliteImage::getMaxValue() const {
     return maxVal;
 }
 
+cv::Mat SatelliteImage::getMat() const {
+    if (mat.empty()) {
+        cv::Mat mat(height, width, CV_64F, 5);
+        for (int i = 0; i < height; ++i) {
+            for (int j = 0; j < width; ++j) {
+                const auto &p = data[i][j];
+                mat.at<Vec5d>(i, j) =
+                    Vec5d(p.getRed(), p.getGreen(), p.getBlue(), p.getNir(), p.getThermal());
+            }
+        }
+    }
+    return mat;
+}
+
 void SatelliteImage::printStatistics() const {
     std::cout << "Mean Value: " << getMeanValue() << "\n";
     std::cout << "Standard Deviation: " << getStdDev() << "\n";
@@ -400,6 +447,7 @@ void SatelliteImage::applyGaussianBlur(double sigma) {
             p.setThermal(planes[4].at<double>(i, j));
         }
     }
+    mat = getMat();
 }
 
 void SatelliteImage::applyMedianFilter(int kernelSize) {
@@ -413,7 +461,6 @@ void SatelliteImage::applyMedianFilter(int kernelSize) {
     // 1. 创建一个 5 通道的 Mat (假设你有 red, green, blue, nir, thermal)
     // CV_64FC(5) 代表 64位浮点数（double），5个通道
     cv::Mat matImage(rows, cols, CV_64FC(5));
-    using Vec5d = cv::Vec<double, 5>;
     // 2. 将 std::vector 数据拷贝到 Mat
     for (int i = 0; i < rows; ++i) {
         // 使用 ptr 获取行指针，提高访问效率

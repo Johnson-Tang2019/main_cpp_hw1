@@ -1,6 +1,9 @@
 #ifndef ALGORITHMS_H
 #define ALGORITHMS_H
 #include <vector>
+#include <opencv2/opencv.hpp>
+#include <random>   
+#include <cmath>
 
 namespace RemoteSensingAlgorithms {
 // 植被指数
@@ -19,34 +22,36 @@ double calculateAWEI(double blue, double green, double nir, double swir1, double
     return blue + 2.5f * green - 1.5f * (swir1 + nir) - 0.25f * swir2;
 };
 
-// 分类算法
 template <typename T>
 std::vector<int> kMeansClustering(const std::vector<T> &data, int k, int maxIter = 100) {
     if (data.empty() || k <= 0) {
         return {};
     }
 
-    int n = data.size();
+    int n = static_cast<int>(data.size());
     std::vector<int> labels(n, 0);
     std::vector<double> centroids(k);
 
-    // 1. 初始化质心：随机从数据中挑选 k 个点
-    std::default_random_engine generator;
+    // 1. 初始化质心
+    std::default_random_engine generator(static_cast<unsigned int>(time(nullptr)));
     std::uniform_int_distribution<int> distribution(0, n - 1);
+    
     for (int i = 0; i < k; ++i) {
+        // 如果 T 是 Point3D，这里需要写成 data[...].z
+        // 为了通用性，这里假设 T 可以直接参与运算或转换
         centroids[i] = static_cast<double>(data[distribution(generator)]);
     }
 
-    // 2. 迭代聚类
     for (int iter = 0; iter < maxIter; ++iter) {
         bool changed = false;
 
-        // A. 分配步骤：将每个点分配给最近的质心
+        // A. 分配步骤
         for (int i = 0; i < n; ++i) {
-            double minDist = std::abs(data[i] - centroids[0]);
+            // 计算距离时，确保 T 类型支持与 double 做减法
+            double minDist = std::abs(static_cast<double>(data[i]) - centroids[0]);
             int bestLabel = 0;
             for (int j = 1; j < k; ++j) {
-                double dist = std::abs(data[i] - centroids[j]);
+                double dist = std::abs(static_cast<double>(data[j]) - centroids[j]);
                 if (dist < minDist) {
                     minDist = dist;
                     bestLabel = j;
@@ -58,11 +63,11 @@ std::vector<int> kMeansClustering(const std::vector<T> &data, int k, int maxIter
             }
         }
 
-        // 如果本轮没有点改变分类，提前结束
-        if (!changed)
+        if (!changed) {
             break;
+        }
 
-        // B. 更新步骤：重新计算质心
+        // B. 更新步骤
         std::vector<double> newSum(k, 0.0);
         std::vector<int> counts(k, 0);
         for (int i = 0; i < n; ++i) {
@@ -76,7 +81,6 @@ std::vector<int> kMeansClustering(const std::vector<T> &data, int k, int maxIter
             }
         }
     }
-
     return labels;
 }
 
@@ -101,7 +105,7 @@ std::vector<std::vector<T>> convolve(const std::vector<std::vector<T>> &image,
     cv::Mat kernel(kRows, kCols, CV_64F);
     for (int i = 0; i < kRows; ++i) {
         for (int j = 0; j < kCols; ++j) {
-            kernelData.at<double>(i, j) = kernelData[i][j];
+            kernel.at<double>(i, j) = kernelData[i][j];
         }
     }
 

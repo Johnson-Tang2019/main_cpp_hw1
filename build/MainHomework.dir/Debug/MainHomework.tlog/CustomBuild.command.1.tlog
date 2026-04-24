@@ -1,6 +1,18 @@
-^C:\USERS\JS\DOCUMENTS\作业\C++\2025302132072_汤骏_大作业\CMAKELISTS.TXT
+^C:\USERS\JS\DOCUMENTS\作业\C++\MAIN_HW\BUILD\CMAKEFILES\FAA2AD73D77DB709FA63CA346122C0F5\AUTOUIC_(CONFIG).STAMP.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/js/Documents/作业/c++/2025302132072_汤骏_大作业 -BC:/Users/js/Documents/作业/c++/2025302132072_汤骏_大作业/build --check-stamp-file C:/Users/js/Documents/作业/c++/2025302132072_汤骏_大作业/build/CMakeFiles/generate.stamp
+cd C:\Users\js\Documents\作业\c++\Main_HW\build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\JS\DOCUMENTS\作业\C++\MAIN_HW\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/js/Documents/作业/c++/Main_HW -BC:/Users/js/Documents/作业/c++/Main_HW/build --check-stamp-file C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

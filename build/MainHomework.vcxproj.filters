@@ -1,25 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\src\DataObject.cpp">
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\mocs_compilation_Debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\src\PointCloudData.cpp">
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\src\DataObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\src\SatelliteImage.cpp">
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\src\MainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\src\main.cpp">
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\src\PointCloudData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\src\SatelliteImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\mocs_compilation_RelWithDebInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\js\Documents\作业\c++\2025302132072_汤骏_大作业\CMakeLists.txt" />
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\include\Algorithms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\include\DataExporter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\include\DataManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\include\DataObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\include\MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\include\Pixel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\include\PointCloudData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\include\SatelliteImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\include_Debug\src\ui_MainWindows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\include_Release\src\ui_MainWindows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\include_MinSizeRel\src\ui_MainWindows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\include_RelWithDebInfo\src\ui_MainWindows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\build\CMakeFiles\faa2ad73d77db709fa63ca346122c0f5\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\js\Documents\作业\c++\Main_HW\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\js\Documents\作业\c++\Main_HW\src\MainWindows.ui" />
+    <None Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\autouic_Debug.stamp" />
+    <None Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\autouic_Release.stamp" />
+    <None Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="C:\Users\js\Documents\作业\c++\Main_HW\build\MainHomework_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{51B81EC7-E8CE-3736-8DF1-E7E310DB30DC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{20AF6E9A-1D5A-3AC6-A9D7-85B2627C7045}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D3D7254B-14BF-3435-8307-976ED962EC66}</UniqueIdentifier>
+      <UniqueIdentifier>{9113904E-4F40-308F-AB95-A6753C5CA794}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

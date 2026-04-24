@@ -1,0 +1,14 @@
+# Target labels
+ spdlog-populate
+# Source files and their labels
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/a578ba270a1ea23b3a0317d11c996930/spdlog-populate.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/72713061cebc0098714e8227a412db1c/spdlog-populate-complete.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-build.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-configure.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-download.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-install.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-mkdir.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-patch.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-test.rule
+C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-subbuild/CMakeFiles/ea38b947cb93b1868a3712e1640910de/spdlog-populate-update.rule

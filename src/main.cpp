@@ -1,6 +1,13 @@
-#include <SatelliteImage.h>
+#include <MainWindow.h>
+#include <QApplication>
+#include <iostream>
+#include "spdlog/spdlog.h"
 
-int main(){
-    SatelliteImage image = SatelliteImage::createRandomImage("001", 1920, 1080);
-    
+int main(int argc, char *argv[]) {
+    spdlog::set_level(spdlog::level::debug);
+
+    QApplication app(argc, argv);
+    MainWindow mainWindow;
+    mainWindow.show();
+    return app.exec();
 }
