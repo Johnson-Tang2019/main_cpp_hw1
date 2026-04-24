@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <opencv2/opencv.hpp> // 引入 OpenCV
 #include <spdlog/spdlog.h>
+#include "SatelliteImage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,10 +16,13 @@ class MainWindow : public QMainWindow {
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    std::vector<SatelliteImage> satelliteImages;
     ~MainWindow();
 
 private slots:
     void on_btnImport_clicked(); // 修改为你点击导入按钮后的逻辑
+    void on_btnGaussianBlur_clicked(); // 高斯模糊按钮
+    void on_btnMedianFilter_clicked(); // 中值滤波按钮
 
 private:
     Ui::MainWindow *ui;

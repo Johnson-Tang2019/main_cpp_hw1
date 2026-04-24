@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[]) {
     spdlog::set_level(spdlog::level::debug);
-
+    std::vector<SatelliteImage> satelliteImages;
     QApplication app(argc, argv);
     MainWindow mainWindow;
     mainWindow.show();

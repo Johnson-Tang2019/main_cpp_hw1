@@ -313,4 +313,7 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/spdlog-inl.h \
   C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/spdlog.h \
   C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/tweakme.h \
-  C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/version.h
+  C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/version.h \
+  C:/Users/js/Documents/作业/c++/Main_HW/include/DataObject.h \
+  C:/Users/js/Documents/作业/c++/Main_HW/include/Pixel.h \
+  C:/Users/js/Documents/作业/c++/Main_HW/include/SatelliteImage.h

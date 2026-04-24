@@ -320,13 +320,16 @@ C:/Users/js/Documents/作业/c++/Main_HW/include/MainWindow.h
  mdp:C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/spdlog.h
  mdp:C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/tweakme.h
  mdp:C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/version.h
+ mdp:C:/Users/js/Documents/作业/c++/Main_HW/include/DataObject.h
  mdp:C:/Users/js/Documents/作业/c++/Main_HW/include/MainWindow.h
+ mdp:C:/Users/js/Documents/作业/c++/Main_HW/include/Pixel.h
+ mdp:C:/Users/js/Documents/作业/c++/Main_HW/include/SatelliteImage.h
 C:/Users/js/Documents/作业/c++/Main_HW/src/DataObject.cpp
 C:/Users/js/Documents/作业/c++/Main_HW/include/Pixel.h
 C:/Users/js/Documents/作业/c++/Main_HW/include/PointCloudData.h
 C:/Users/js/Documents/作业/c++/Main_HW/include/SatelliteImage.h
+C:/Users/js/Documents/作业/c++/Main_HW/src/main.cpp
 C:/Users/js/Documents/作业/c++/Main_HW/src/MainWindow.cpp
  uic:ui_MainWindows.h
-C:/Users/js/Documents/作业/c++/Main_HW/src/main.cpp
 C:/Users/js/Documents/作业/c++/Main_HW/src/PointCloudData.cpp
 C:/Users/js/Documents/作业/c++/Main_HW/src/SatelliteImage.cpp

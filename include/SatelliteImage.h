@@ -1,3 +1,5 @@
+#pragma once
+
 #include "DataObject.h"
 #include "Pixel.h"
 #include "spdlog/spdlog.h"
@@ -26,6 +28,7 @@ class SatelliteImage : public DataObject {
     // 私有辅助函数
     void calculateStatistics();                   // 计算统计信息
     void validateCoordinates(int x, int y) const; // 坐标验证
+    void setData();
 
     using Vec5d = cv::Vec<double, 5>;
 
@@ -109,11 +112,12 @@ class SatelliteImage : public DataObject {
     std::string getSensorType() const { return sensorType; }
     double getCloudCover() const { return cloudCover; }
     time_t getAcquisitionTime() const { return acquisitionTime; }
-    cv::Mat getMat() const;
+    cv::Mat getMat();
 
     // 设置器（带验证）
     void setCloudCover(double cover);
     void setAcquisitionTime(time_t time);
+
 
     // 静态工厂方法
     static SatelliteImage createRandomImage(const std::string &id, int w, int h);

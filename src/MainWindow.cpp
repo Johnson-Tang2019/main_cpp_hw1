@@ -8,9 +8,6 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-
-    // 绑定导入按钮
-    //connect(ui->btnImport, &QPushButton::clicked, this, &MainWindow::on_btnImport_clicked);
 }
 
 void MainWindow::on_btnImport_clicked() {
@@ -42,8 +39,9 @@ void MainWindow::on_btnImport_clicked() {
             cv::merge(channels, image5C);
             image5C.convertTo(image5C, CV_64F);
             // --- 转换 5 通道逻辑结束 ---
-            spdlog::debug("转换 5 通道逻辑结束, 图像通道数: {}", image5C.channels());
             SatelliteImage satImage("1", "1", fileName.toStdString(), image5C);
+            spdlog::debug("创建卫星图像, 通道数为{}", satImage.getMat().channels());
+            satelliteImages.push_back(satImage);
             displayImage(image5C);
         }
     }
@@ -86,9 +84,26 @@ void MainWindow::displayImage(const cv::Mat &mat) {
 
     // 3. 更新 UI
     if (!qimg.isNull()) {
+        ui->labelImage->setAlignment(Qt::AlignCenter);
         ui->labelImage->setPixmap(QPixmap::fromImage(qimg));
-        // 可选：让图片自适应 label 大小
-        ui->labelImage->setScaledContents(true);
+    }
+}
+
+void MainWindow::on_btnGaussianBlur_clicked() {
+    spdlog::debug("高斯模糊");
+    double simga = ui->sbSigma->value();
+    if (!satelliteImages.empty()) {
+        satelliteImages[0].applyGaussianBlur(simga);
+        displayImage(satelliteImages[0].getMat());
+    }
+}
+
+void MainWindow::on_btnMedianFilter_clicked() {
+    spdlog::debug("中值滤波");
+    int kernelSize = ui->sbKernelSize->value();
+    if (!satelliteImages.empty()) {
+        satelliteImages[0].applyMedianFilter(kernelSize);
+        displayImage(satelliteImages[0].getMat());
     }
 }
 

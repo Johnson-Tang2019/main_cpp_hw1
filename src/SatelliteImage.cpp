@@ -14,7 +14,6 @@ SatelliteImage::SatelliteImage(const std::string &id, const std::string &name,
     : DataObject(id, name, path), width(mat.cols), height(mat.rows), bands(mat.channels()),
       sensorType("Openellite"), acquisitionTime(0), mat(mat) {
 
-    
     data.resize(height);
     spdlog::debug("初始化遥感影像: {}", path);
 
@@ -36,7 +35,6 @@ SatelliteImage::SatelliteImage(const std::string &id, const std::string &name,
         }
     }
 
-    
     // 初始化统计信息
     bandStatistics.resize(bands);
 }
@@ -385,16 +383,18 @@ double SatelliteImage::getMaxValue() const {
     return maxVal;
 }
 
-cv::Mat SatelliteImage::getMat() const {
+cv::Mat SatelliteImage::getMat() {
     if (mat.empty()) {
-        cv::Mat mat(height, width, CV_64F, 5);
+        spdlog::debug("mat 为空，开始转换为 Mat");
+        cv::Mat newMat(height, width, CV_64FC(5));
         for (int i = 0; i < height; ++i) {
             for (int j = 0; j < width; ++j) {
                 const auto &p = data[i][j];
-                mat.at<Vec5d>(i, j) =
+                newMat.at<Vec5d>(i, j) =
                     Vec5d(p.getRed(), p.getGreen(), p.getBlue(), p.getNir(), p.getThermal());
             }
         }
+        mat = newMat;
     }
     return mat;
 }
@@ -409,86 +409,29 @@ void SatelliteImage::printStatistics() const {
 // 影像处理
 
 void SatelliteImage::applyGaussianBlur(double sigma) {
-    if (data.empty() || data[0].empty())
-        return;
-
-    int rows = data.size();
-    int cols = data[0].size();
-
-    // 1. 创建 5 个独立的单通道 Mat (CV_64F 对应 double)
-    std::vector<cv::Mat> planes(5, cv::Mat(rows, cols, CV_64F));
-
-    // 2. 将 std::vector 数据拆分到各个通道
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            const auto &p = data[i][j];
-            planes[0].at<double>(i, j) = p.getRed();
-            planes[1].at<double>(i, j) = p.getGreen();
-            planes[2].at<double>(i, j) = p.getBlue();
-            planes[3].at<double>(i, j) = p.getNir();
-            planes[4].at<double>(i, j) = p.getThermal();
-        }
+    if (mat.empty()) {
+        mat = getMat();
     }
-
-    // 3. 对每个通道分别执行高斯模糊
-    // ksize 设为 Size(0,0) 会让 OpenCV 根据 sigma 自动计算最优窗口
-    for (int k = 0; k < 5; ++k) {
-        cv::GaussianBlur(planes[k], planes[k], cv::Size(0, 0), sigma);
-    }
-
-    // 4. 将处理后的数据写回 std::vector
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            auto &p = data[i][j];
-            p.setRed(planes[0].at<double>(i, j));
-            p.setGreen(planes[1].at<double>(i, j));
-            p.setBlue(planes[2].at<double>(i, j));
-            p.setNir(planes[3].at<double>(i, j));
-            p.setThermal(planes[4].at<double>(i, j));
-        }
-    }
-    mat = getMat();
+    spdlog::debug("高斯模糊开始，通道数为{}", mat.channels());
+    cv::GaussianBlur(mat, mat, cv::Size(0, 0), sigma);
+    spdlog::debug("高斯模糊完成");
+    // 同步写回 data 向量 (如果你的业务逻辑必须依赖 data)
+    setData();
 }
 
 void SatelliteImage::applyMedianFilter(int kernelSize) {
 
-    if (data.empty() || data[0].empty())
-        return;
-
-    int rows = data.size();
-    int cols = data[0].size();
-
-    // 1. 创建一个 5 通道的 Mat (假设你有 red, green, blue, nir, thermal)
-    // CV_64FC(5) 代表 64位浮点数（double），5个通道
-    cv::Mat matImage(rows, cols, CV_64FC(5));
-    // 2. 将 std::vector 数据拷贝到 Mat
-    for (int i = 0; i < rows; ++i) {
-        // 使用 ptr 获取行指针，提高访问效率
-        Vec5d *rowPtr = matImage.ptr<Vec5d>(i);
-        for (int j = 0; j < cols; ++j) {
-            const auto &p = data[i][j];
-            rowPtr[j] = Vec5d(p.getRed(), p.getGreen(), p.getBlue(), p.getNir(), p.getThermal());
-        }
+    if (mat.empty()) {
+        mat = getMat();
     }
-
     // 3. 执行中值滤波
-    // 注意：内核大小必须是奇数
     if (kernelSize % 2 == 0)
         kernelSize++;
-    cv::medianBlur(matImage, matImage, kernelSize);
-
-    // 4. 将处理后的数据写回 std::vector
-    for (int i = 0; i < rows; ++i) {
-        Vec5d *rowPtr = matImage.ptr<Vec5d>(i);
-        for (int j = 0; j < cols; ++j) {
-            auto &p = data[i][j];
-            p.setRed(rowPtr[j][0]);
-            p.setGreen(rowPtr[j][1]);
-            p.setBlue(rowPtr[j][2]);
-            p.setNir(rowPtr[j][3]);
-            p.setThermal(rowPtr[j][4]);
-        }
-    }
+    cv::Mat floatMat;
+    this->mat.convertTo(floatMat, CV_32F);
+    cv::medianBlur(floatMat, floatMat, kernelSize);
+    floatMat.convertTo(this->mat, CV_64FC(5));
+    setData();
 }
 
 void SatelliteImage::normalize() {
@@ -583,6 +526,24 @@ void SatelliteImage::setAcquisitionTime(time_t time) {
         throw std::invalid_argument("Acquisition time cannot be negative");
     }
     acquisitionTime = time;
+}
+
+void SatelliteImage::setData() {
+    int rows = mat.rows;
+    int cols = mat.cols;
+    for (int i = 0; i < rows; ++i) {
+        // 使用指针访问，比 .at 块 10 倍以上
+        const Vec5d *ptr = mat.ptr<Vec5d>(i);
+        for (int j = 0; j < cols; ++j) {
+            auto &p = data[i][j];
+            p.setRed(ptr[j][0]);
+            p.setGreen(ptr[j][1]);
+            p.setBlue(ptr[j][2]);
+            p.setNir(ptr[j][3]);
+            p.setThermal(ptr[j][4]);
+        }
+    }
+    spdlog::debug("setData");
 }
 
 // 静态工厂方法  ******************未实现*****************
