@@ -132,6 +132,7 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qbytearrayalgorithms.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qbytearraylist.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qbytearrayview.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qcalendar.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qchar.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qcheckedint_impl.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qcompare.h \
@@ -146,9 +147,15 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qcontiguouscache.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qdatetime.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qdebug.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qdir.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qdirlisting.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qendian.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qexceptionhandling.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qfile.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qfiledevice.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qfileinfo.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qflags.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qfloat16.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qforeach.h \
@@ -166,6 +173,7 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qline.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qlist.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qlocale.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qlogging.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qmalloc.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qmap.h \
@@ -221,6 +229,7 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qtenvironmentvariables.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qtextstream.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qtformat_impl.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtCore/qtimezone.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qtmetamacros.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qtnoop.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qtpreprocessorsupport.h \
@@ -238,6 +247,8 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtCore/qyieldcpu.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtGui/QImage \
+  C:/Qt/6.11.0/msvc2022_64/include/QtGui/QPixmap \
   C:/Qt/6.11.0/msvc2022_64/include/QtGui/qaction.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtGui/qbitmap.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtGui/qbrush.h \
@@ -266,8 +277,11 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Qt/6.11.0/msvc2022_64/include/QtGui/qtransform.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QFileDialog \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QLabel \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qdialog.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qfiledialog.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qframe.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qmainwindow.h \
@@ -316,4 +330,5 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Users/js/Documents/作业/c++/Main_HW/external/spdlog/version.h \
   C:/Users/js/Documents/作业/c++/Main_HW/include/DataObject.h \
   C:/Users/js/Documents/作业/c++/Main_HW/include/Pixel.h \
+  C:/Users/js/Documents/作业/c++/Main_HW/include/PointCloudData.h \
   C:/Users/js/Documents/作业/c++/Main_HW/include/SatelliteImage.h

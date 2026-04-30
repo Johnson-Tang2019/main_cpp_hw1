@@ -92,6 +92,11 @@ DataObject *SatelliteImage::clone() const { return new SatelliteImage(*this); }
 // 实现数据导出逻辑
 bool SatelliteImage::exportData(const std::string &format) const {
 
+    return exportDataInPath(format, "./");
+
+}
+
+bool SatelliteImage::exportDataInPath(const std::string &format, const std::string &path) const {
     // 这里可以根据format参数实现不同格式的导出逻辑
     std::cout << "Exporting SatelliteImage in format: " << format << "\n";
     std::ofstream outFile(name + "." + format);
@@ -107,10 +112,14 @@ bool SatelliteImage::exportData(const std::string &format) const {
         outFile << "Created: " << std::put_time(&timeInfo, "%Y-%m-%d %H:%M:%S");
         return true;
 
-    } else {
-        std::cerr << "Unsupported export format: " << format << "\n";
-        return false;
+    } else if (format == "JPG") {
+
+        // 导出为JPG格式
+        cv::imwrite(name + ".jpg", mat);
+        return true;
     }
+    std::cerr << "Unsupported export format: " << format << "\n";
+    return false;
 }
 
 double SatelliteImage::getQualityScore() const {
@@ -384,19 +393,21 @@ double SatelliteImage::getMaxValue() const {
 }
 
 cv::Mat SatelliteImage::getMat() {
-    if (mat.empty()) {
-        spdlog::debug("mat 为空，开始转换为 Mat");
-        cv::Mat newMat(height, width, CV_64FC(5));
-        for (int i = 0; i < height; ++i) {
-            for (int j = 0; j < width; ++j) {
-                const auto &p = data[i][j];
-                newMat.at<Vec5d>(i, j) =
-                    Vec5d(p.getRed(), p.getGreen(), p.getBlue(), p.getNir(), p.getThermal());
-            }
-        }
-        mat = newMat;
-    }
+    updateMat();
     return mat;
+}
+
+void SatelliteImage::updateMat() {
+    spdlog::debug("更新mat");
+    cv::Mat newMat(height, width, CV_64FC(5));
+    for (int i = 0; i < height; ++i) {
+        for (int j = 0; j < width; ++j) {
+            const auto &p = data[i][j];
+            newMat.at<Vec5d>(i, j) =
+                Vec5d(p.getRed(), p.getGreen(), p.getBlue(), p.getNir(), p.getThermal());
+        }
+    }
+    mat = newMat;
 }
 
 void SatelliteImage::printStatistics() const {
@@ -424,13 +435,29 @@ void SatelliteImage::applyMedianFilter(int kernelSize) {
     if (mat.empty()) {
         mat = getMat();
     }
+
+    cv::Mat medianFilterMat;
+    std::vector<cv::Mat> channels;
+    cv::split(mat, channels);
+    spdlog::debug("拆分通道");
+    spdlog::debug("通道数: {}", channels.size());
+    // 只保留前三个通道 (B, G, R)
+    std::vector<cv::Mat> bgrChannels = {channels[0], channels[1], channels[2]};
+    cv::merge(bgrChannels, medianFilterMat);
+    medianFilterMat.convertTo(medianFilterMat, CV_8UC3);
+    spdlog::debug("中值滤波开始，通道数为{}", medianFilterMat.channels());
     // 3. 执行中值滤波
     if (kernelSize % 2 == 0)
-        kernelSize++;
-    cv::Mat floatMat;
-    this->mat.convertTo(floatMat, CV_32F);
-    cv::medianBlur(floatMat, floatMat, kernelSize);
-    floatMat.convertTo(this->mat, CV_64FC(5));
+        kernelSize++; // 确保 kernelSize 是奇数
+    cv::medianBlur(medianFilterMat, medianFilterMat, kernelSize);
+    // 合并通道
+    spdlog::debug("中值滤波完成，通道数为{}", medianFilterMat.channels());
+    medianFilterMat.convertTo(medianFilterMat, CV_64FC(3));
+    cv::split(medianFilterMat, bgrChannels);
+    channels[0] = bgrChannels[0];
+    channels[1] = bgrChannels[1];
+    channels[2] = bgrChannels[2];
+    cv::merge(channels, this->mat);
     setData();
 }
 
@@ -546,7 +573,7 @@ void SatelliteImage::setData() {
     spdlog::debug("setData");
 }
 
-// 静态工厂方法  ******************未实现*****************
+// 静态工厂方法
 SatelliteImage SatelliteImage::createRandomImage(const std::string &id, int w, int h) {
 
     SatelliteImage img(id, "Name:", "Path:", w, h, 5, "RandomSensor", time(nullptr));

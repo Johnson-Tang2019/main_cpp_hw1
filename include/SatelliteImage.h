@@ -54,6 +54,7 @@ class SatelliteImage : public DataObject {
     // 实现基类虚函数
     void display() const override;
     DataObject *clone() const override;
+    bool exportDataInPath(const std::string &format, const std::string &path) const override;
     bool exportData(const std::string &format) const override;
     std::string getType() const override { return "SatelliteImage"; }
     double getQualityScore() const override;
@@ -113,6 +114,7 @@ class SatelliteImage : public DataObject {
     double getCloudCover() const { return cloudCover; }
     time_t getAcquisitionTime() const { return acquisitionTime; }
     cv::Mat getMat();
+    void updateMat();
 
     // 设置器（带验证）
     void setCloudCover(double cover);

@@ -30,6 +30,7 @@ public:
     virtual void display() const = 0;
     virtual DataObject* clone() const = 0;
     virtual bool exportData(const std::string& format) const = 0;
+    virtual bool exportDataInPath(const std::string& format, const std::string& path) const = 0;//导出数据到指定路径
     
     // 虚函数（可被子类重写）
     virtual std::string getType() const { return "DataObject"; }

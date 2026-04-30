@@ -1,10 +1,4 @@
 #include "MainWindow.h"
-#include "spdlog/spdlog.h"
-#include "ui_MainWindows.h"
-#include <QFileDialog>
-#include <QImage>
-#include <QPixmap>
-#include <SatelliteImage.h>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -44,6 +38,16 @@ void MainWindow::on_btnImport_clicked() {
             satelliteImages.push_back(satImage);
             displayImage(image5C);
         }
+    }
+}
+
+void MainWindow::on_btnExport_clicked() {
+    QString fileName = QFileDialog::getSaveFileName(this, "保存遥感影像", "", "Images (*.jpg)");
+    if (!fileName.isEmpty()) {
+        // 使用 OpenCV 保存图像 (支持 .tif 等遥感格式)
+        spdlog::debug("开始保存图像: {}", fileName.toStdString());
+        cv::imwrite(fileName.toStdString(), satelliteImages[0].getMat());
+        spdlog::debug("图像保存完成");
     }
 }
 
@@ -104,6 +108,46 @@ void MainWindow::on_btnMedianFilter_clicked() {
     if (!satelliteImages.empty()) {
         satelliteImages[0].applyMedianFilter(kernelSize);
         displayImage(satelliteImages[0].getMat());
+    }
+}
+
+void MainWindow::on_btnImportPointCloud_clicked() {
+    spdlog::debug("导入点云");
+    QString fileName = QFileDialog::getOpenFileName(this, "打开点云文件", "", "PLY (*.ply)");
+    if (!fileName.isEmpty()) {
+        PointCloudData pointCloud(fileName.toStdString(), fileName.toStdString(),
+                                  fileName.toStdString());
+        pointCloud.loadPLY(fileName.toStdString());
+        pointCloud.display();
+        pointClouds.push_back(pointCloud);
+    }
+}
+
+void MainWindow::on_btnVoxelFilter_clicked() {
+    spdlog::debug("体素滤波器");
+    double voxelSize = ui->sbVoxelSize->value();
+    if (voxelSize <= 0) {
+        spdlog::error("体素大小必须大于 0");
+        return;
+    }
+    if (!pointClouds.empty()) {
+        spdlog::debug("开始体素滤波");
+        pointClouds[0] = pointClouds[0].voxelFilter(voxelSize);
+        pointClouds[0].display();
+        spdlog::debug("体素滤波完成");
+    }
+}
+
+void MainWindow::on_btnExportPLY_clicked() {
+    spdlog::debug("导出PLY");
+    if (!pointClouds.empty()) {
+        QString fileName = QFileDialog::getSaveFileName(this, "保存点云文件", "", "PLY (*.ply)");
+        if (!fileName.isEmpty()) {
+            if (pointClouds[0].exportDataInPath("PLY", fileName.toStdString()))
+                spdlog::debug("导出PLY成功");
+            else
+                spdlog::error("导出PLY失败");
+        }
     }
 }
 

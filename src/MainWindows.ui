@@ -16,7 +16,7 @@
   <widget class="QLabel" name="labelImage">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>-10</x>
      <y>0</y>
      <width>1080</width>
      <height>501</height>
@@ -26,65 +26,121 @@
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
+  <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>550</y>
-     <width>463</width>
-     <height>80</height>
+     <x>90</x>
+     <y>520</y>
+     <width>873</width>
+     <height>171</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <property name="leftMargin">
-     <number>1</number>
-    </property>
-    <property name="topMargin">
-     <number>1</number>
-    </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="btnImport">
-      <property name="text">
-       <string>Import</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnGaussianBlur">
-      <property name="text">
-       <string>GaussianBlur</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QDoubleSpinBox" name="sbSigma">
-      <property name="singleStep">
-       <double>0.500000000000000</double>
-      </property>
-      <property name="value">
-       <double>1.000000000000000</double>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnMedianFilter">
-      <property name="text">
-       <string>MedianFilter</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSpinBox" name="sbKernelSize">
-      <property name="minimum">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
        <number>1</number>
       </property>
-      <property name="singleStep">
-       <number>2</number>
-      </property>
-      <property name="value">
+      <property name="topMargin">
        <number>1</number>
       </property>
-     </widget>
+      <item>
+       <widget class="QPushButton" name="btnImport">
+        <property name="text">
+         <string>Import Image</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExportImage">
+        <property name="text">
+         <string>ExportImage</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnGaussianBlur">
+        <property name="text">
+         <string>GaussianBlur</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="sbSigma">
+        <property name="singleStep">
+         <double>0.500000000000000</double>
+        </property>
+        <property name="value">
+         <double>1.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnMedianFilter">
+        <property name="text">
+         <string>MedianFilter</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="sbKernelSize">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="singleStep">
+         <number>2</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QPushButton" name="btnImportPointCloud">
+        <property name="text">
+         <string>Import PointCloud</string>
+        </property>
+        <property name="autoRepeatInterval">
+         <number>50</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExportPLY">
+        <property name="text">
+         <string>ExportPLY</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnVoxelFilter">
+        <property name="text">
+         <string>voxelFilter</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="sbVoxelSize">
+        <property name="singleStep">
+         <double>0.010000000000000</double>
+        </property>
+        <property name="value">
+         <double>0.050000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
