@@ -114,7 +114,10 @@ class SatelliteImage : public DataObject {
     double getCloudCover() const { return cloudCover; }
     time_t getAcquisitionTime() const { return acquisitionTime; }
     cv::Mat getMat();
+
+    //About cv::Mat
     void updateMat();
+    cv::Mat get8UC3Mat() const;
 
     // 设置器（带验证）
     void setCloudCover(double cover);

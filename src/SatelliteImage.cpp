@@ -93,7 +93,6 @@ DataObject *SatelliteImage::clone() const { return new SatelliteImage(*this); }
 bool SatelliteImage::exportData(const std::string &format) const {
 
     return exportDataInPath(format, "./");
-
 }
 
 bool SatelliteImage::exportDataInPath(const std::string &format, const std::string &path) const {
@@ -113,9 +112,9 @@ bool SatelliteImage::exportDataInPath(const std::string &format, const std::stri
         return true;
 
     } else if (format == "JPG") {
-
         // 导出为JPG格式
-        cv::imwrite(name + ".jpg", mat);
+        cv::imwrite(name + ".jpg", get8UC3Mat());
+        spdlog::debug("导出为JPG格式: {}", name + ".jpg");
         return true;
     }
     std::cerr << "Unsupported export format: " << format << "\n";
@@ -619,4 +618,17 @@ SatelliteImage SatelliteImage::createConstantImage(const std::string &id, int w,
     img.data.assign(h, std::vector<Pixel<double>>(w, value));
 
     return img;
+}
+
+cv::Mat SatelliteImage::get8UC3Mat() const {
+    std::vector<cv::Mat> channels;
+    cv::Mat result;
+    cv::split(mat, channels);
+    spdlog::debug("拆分通道");
+    spdlog::debug("通道数: {}", channels.size());
+    // 只保留前三个通道 (B, G, R)
+    std::vector<cv::Mat> bgrChannels = {channels[0], channels[1], channels[2]};
+    cv::merge(bgrChannels, result);
+    result.convertTo(result, CV_8UC3);
+    return result;
 }

@@ -41,12 +41,12 @@ void MainWindow::on_btnImport_clicked() {
     }
 }
 
-void MainWindow::on_btnExport_clicked() {
+void MainWindow::on_btnExportImage_clicked() {
     QString fileName = QFileDialog::getSaveFileName(this, "保存遥感影像", "", "Images (*.jpg)");
     if (!fileName.isEmpty()) {
         // 使用 OpenCV 保存图像 (支持 .tif 等遥感格式)
         spdlog::debug("开始保存图像: {}", fileName.toStdString());
-        cv::imwrite(fileName.toStdString(), satelliteImages[0].getMat());
+        cv::imwrite(fileName.toStdString(), satelliteImages[0].get8UC3Mat());
         spdlog::debug("图像保存完成");
     }
 }
@@ -59,14 +59,8 @@ void MainWindow::displayImage(const cv::Mat &mat) {
     // 1. 处理通道逻辑：如果是 5 通道，提取前 3 个通道用于显示
 
     spdlog::debug("检测到 5 通道影像，正在提取前 3 通道 (BGR) 进行显示");
-    std::vector<cv::Mat> channels;
-    cv::split(mat, channels);
-    spdlog::debug("拆分通道");
-    spdlog::debug("通道数: {}", channels.size());
-    // 只保留前三个通道 (B, G, R)
-    std::vector<cv::Mat> bgrChannels = {channels[0], channels[1], channels[2]};
-    cv::merge(bgrChannels, displayMat);
-    displayMat.convertTo(displayMat, CV_8UC3);
+    displayMat = satelliteImages[0].get8UC3Mat();
+    spdlog::debug("显示图像, 通道数为{}", displayMat.channels());
 
     // 2. 转换为 Qt 格式
     if (displayMat.channels() == 3) {

@@ -54,7 +54,7 @@
       <item>
        <widget class="QPushButton" name="btnExportImage">
         <property name="text">
-         <string>ExportImage</string>
+         <string>Export Image</string>
         </property>
        </widget>
       </item>

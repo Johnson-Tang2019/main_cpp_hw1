@@ -344,7 +344,7 @@ C:/Users/js/Documents/作业/c++/Main_HW/src/DataObject.cpp
 C:/Users/js/Documents/作业/c++/Main_HW/include/Pixel.h
 C:/Users/js/Documents/作业/c++/Main_HW/include/PointCloudData.h
 C:/Users/js/Documents/作业/c++/Main_HW/include/SatelliteImage.h
-C:/Users/js/Documents/作业/c++/Main_HW/src/main.cpp
 C:/Users/js/Documents/作业/c++/Main_HW/src/MainWindow.cpp
+C:/Users/js/Documents/作业/c++/Main_HW/src/main.cpp
 C:/Users/js/Documents/作业/c++/Main_HW/src/PointCloudData.cpp
 C:/Users/js/Documents/作业/c++/Main_HW/src/SatelliteImage.cpp

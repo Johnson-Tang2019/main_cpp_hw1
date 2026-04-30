@@ -29,7 +29,7 @@ public:
 
 private slots:
     void on_btnImport_clicked(); // 导入图像按钮
-    void on_btnExport_clicked(); // 导出图像按钮
+    void on_btnExportImage_clicked(); // 导出图像按钮
     void on_btnGaussianBlur_clicked(); // 高斯模糊按钮
     void on_btnMedianFilter_clicked(); // 中值滤波按钮
     void on_btnImportPointCloud_clicked(); // 导入点云按钮
