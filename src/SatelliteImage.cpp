@@ -44,7 +44,7 @@ SatelliteImage::SatelliteImage(const SatelliteImage &other)
     : DataObject(other), width(other.width), height(other.height), bands(other.bands),
       sensorType(other.sensorType), cloudCover(other.cloudCover),
       acquisitionTime(other.acquisitionTime), data(other.data),
-      bandStatistics(other.bandStatistics) {}
+      bandStatistics(other.bandStatistics), mat(other.mat.clone()) {}
 
 // 赋值运算符
 SatelliteImage &SatelliteImage::operator=(const SatelliteImage &other) {
@@ -58,6 +58,8 @@ SatelliteImage &SatelliteImage::operator=(const SatelliteImage &other) {
         acquisitionTime = other.acquisitionTime;
         data = other.data;
         bandStatistics = other.bandStatistics;
+        this->mat = other.mat.clone();
+        this->size = other.size;
     }
     return *this;
 }
@@ -235,8 +237,8 @@ const std::vector<Pixel<double>> &SatelliteImage::operator[](int row) const {
 
 // 类型转换运算符
 SatelliteImage::operator std::string() const {
-    return DataObject::operator std::string() + " [" + sensorType + " " + std::to_string(width) +
-           "x" + std::to_string(height) + "]";
+    return DataObject::operator std::string() + "\n" + "Size: " + std::to_string(size) + "MB " +
+           " [" + sensorType + " " + std::to_string(width) + "x" + std::to_string(height) + "]";
 }
 
 // 子图操作
@@ -398,6 +400,7 @@ cv::Mat SatelliteImage::getMat() {
 
 void SatelliteImage::updateMat() {
     spdlog::debug("更新mat");
+
     cv::Mat newMat(height, width, CV_64FC(5));
     for (int i = 0; i < height; ++i) {
         for (int j = 0; j < width; ++j) {
@@ -621,6 +624,10 @@ SatelliteImage SatelliteImage::createConstantImage(const std::string &id, int w,
 }
 
 cv::Mat SatelliteImage::get8UC3Mat() const {
+    if (this->mat.empty()) {
+        spdlog::error("get8UC3Mat: 内部 mat 是空的！");
+        return cv::Mat();
+    }
     std::vector<cv::Mat> channels;
     cv::Mat result;
     cv::split(mat, channels);
@@ -630,5 +637,8 @@ cv::Mat SatelliteImage::get8UC3Mat() const {
     std::vector<cv::Mat> bgrChannels = {channels[0], channels[1], channels[2]};
     cv::merge(bgrChannels, result);
     result.convertTo(result, CV_8UC3);
+    spdlog::debug("合并后通道数: {}", result.channels());
     return result;
 }
+
+void SatelliteImage::updateSize(double size) { this->size = size; }

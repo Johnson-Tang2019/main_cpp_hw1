@@ -280,11 +280,14 @@ C:/Users/js/Documents/作业/c++/Main_HW/build/MainHomework_autogen/include_Debu
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QFileDialog \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QLabel \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qdialog.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qdialogbuttonbox.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qfiledialog.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qframe.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \

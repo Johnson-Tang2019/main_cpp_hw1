@@ -43,7 +43,7 @@ public:
     bool operator<(const DataObject& other) const { return size < other.size; }
     
     // 类型转换运算符
-    operator std::string() const { return name + " (" + id + ")"; }
+    operator std::string() const { return "Type: " + getType() + " " + "Name: " + name + " (" + id + ")"; }
     operator double() const { return size; }
     
     // 获取器（const成员函数）

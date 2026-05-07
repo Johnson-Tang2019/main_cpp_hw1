@@ -1,49 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QWidget" name="MainWindow">
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>727</height>
+    <width>1115</width>
+    <height>749</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>RS App</string>
   </property>
-  <widget class="QLabel" name="labelImage">
-   <property name="geometry">
-    <rect>
-     <x>-10</x>
-     <y>0</y>
-     <width>1080</width>
-     <height>501</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>520</y>
-     <width>873</width>
-     <height>171</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainVerticalLayout" stretch="8,1,1">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <property name="leftMargin">
-       <number>1</number>
-      </property>
-      <property name="topMargin">
-       <number>1</number>
-      </property>
+     <layout class="QHBoxLayout" name="contentLayout" stretch="4,1">
+      <item>
+       <widget class="QLabel" name="labelImage">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(30, 30, 30); border: 1px solid rgb(60, 60, 60);</string>
+        </property>
+        <property name="text">
+         <string>Image...</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="logLayout">
+        <item>
+         <widget class="QTextBrowser" name="tbImage">
+          <property name="placeholderText">
+           <string>Image Info...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextBrowser" name="tbPointCloud">
+          <property name="placeholderText">
+           <string>PointCloud Info...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="imageToolBar">
       <item>
        <widget class="QPushButton" name="btnImport">
         <property name="text">
@@ -67,9 +102,6 @@
       </item>
       <item>
        <widget class="QDoubleSpinBox" name="sbSigma">
-        <property name="singleStep">
-         <double>0.500000000000000</double>
-        </property>
         <property name="value">
          <double>1.000000000000000</double>
         </property>
@@ -87,63 +119,51 @@
         <property name="minimum">
          <number>1</number>
         </property>
-        <property name="singleStep">
-         <number>2</number>
-        </property>
-        <property name="value">
-         <number>1</number>
-        </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cbImage"/>
       </item>
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <layout class="QHBoxLayout" name="pcToolBar">
       <item>
        <widget class="QPushButton" name="btnImportPointCloud">
         <property name="text">
          <string>Import PointCloud</string>
-        </property>
-        <property name="autoRepeatInterval">
-         <number>50</number>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btnExportPLY">
         <property name="text">
-         <string>ExportPLY</string>
+         <string>Export PLY</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btnVoxelFilter">
         <property name="text">
-         <string>voxelFilter</string>
+         <string>Voxel Filter</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QDoubleSpinBox" name="sbVoxelSize">
-        <property name="singleStep">
-         <double>0.010000000000000</double>
-        </property>
         <property name="value">
          <double>0.050000000000000</double>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
+       <widget class="QComboBox" name="cbPointCloud"/>
       </item>
      </layout>
     </item>
    </layout>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

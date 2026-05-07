@@ -11,6 +11,7 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <random>
+#include <string>
 #include <vector>
 
 class SatelliteImage : public DataObject {
@@ -113,9 +114,9 @@ class SatelliteImage : public DataObject {
     std::string getSensorType() const { return sensorType; }
     double getCloudCover() const { return cloudCover; }
     time_t getAcquisitionTime() const { return acquisitionTime; }
-    cv::Mat getMat();
 
-    //About cv::Mat
+    // About cv::Mat
+    cv::Mat getMat();
     void updateMat();
     cv::Mat get8UC3Mat() const;
 
@@ -123,9 +124,12 @@ class SatelliteImage : public DataObject {
     void setCloudCover(double cover);
     void setAcquisitionTime(time_t time);
 
-
     // 静态工厂方法
     static SatelliteImage createRandomImage(const std::string &id, int w, int h);
     static SatelliteImage createConstantImage(const std::string &id, int w, int h,
                                               const Pixel<double> &value);
+
+    // 文件大小（MB）
+    void updateSize(double size);
+    double getSize() const { return size; }
 };

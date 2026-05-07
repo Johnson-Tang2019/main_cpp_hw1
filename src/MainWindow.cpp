@@ -2,106 +2,128 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    setWindowTitle("RS App");
 }
 
 void MainWindow::on_btnImport_clicked() {
     QString fileName =
         QFileDialog::getOpenFileName(this, "打开遥感影像", "", "Images (*.png *.jpg *.tif)");
-    if (!fileName.isEmpty()) {
-        // 使用 OpenCV 读取图像 (支持 .tif 等遥感格式)
-        spdlog::debug("开始读取图像: {}", fileName.toStdString());
-        cv::Mat image = cv::imread(fileName.toStdString());
-        if (!image.empty()) {
-            // --- 转换 5 通道逻辑开始 ---
-            spdlog::debug("转换 5 通道逻辑开始");
-            cv::Mat image5C;
-            std::vector<cv::Mat> channels;
+    if (fileName.isEmpty())
+        return;
+    spdlog::debug("开始读取图像: {}", fileName.toStdString());
 
-            spdlog::debug("拆分原始通道 (假设是 BGR)");
-            cv::split(image, channels);
-
-            // 2. 补齐通道 (如果原始是单通道，补4个；如果是3通道，补2个)
-            spdlog::debug("补齐通道");
-            while (channels.size() < 5) {
-                // 创建一个大小一致、类型一致的空通道（全黑）
-                cv::Mat extraChannel = cv::Mat::zeros(image.rows, image.cols, CV_8UC1);
-                channels.push_back(extraChannel);
-            }
-
-            // 3. 合并成 5 通道
-            spdlog::debug("合并通道");
-            cv::merge(channels, image5C);
-            image5C.convertTo(image5C, CV_64F);
-            // --- 转换 5 通道逻辑结束 ---
-            SatelliteImage satImage("1", "1", fileName.toStdString(), image5C);
-            spdlog::debug("创建卫星图像, 通道数为{}", satImage.getMat().channels());
-            satelliteImages.push_back(satImage);
-            displayImage(image5C);
-        }
+    // 使用 IMREAD_UNCHANGED 保持原始通道数和深度（如 16位或多通道）
+    cv::Mat image = cv::imread(fileName.toStdString(), cv::IMREAD_UNCHANGED);
+    if (image.empty()) {
+        QMessageBox::critical(this, "错误", "无法读取图像文件！");
+        return;
     }
+
+    // 转换逻辑
+    cv::Mat image5C;
+    std::vector<cv::Mat> channels;
+    cv::split(image, channels);
+    spdlog::debug("原始图像通道数: {}", channels.size());
+
+    // 【改进 2】动态匹配深度补齐通道
+    // 确保补充的通道与原图深度一致（防止 8位和 16位混合报错）
+    int originalType = image.depth();
+    while (channels.size() < 5) {
+        cv::Mat extraChannel = cv::Mat::zeros(image.rows, image.cols, originalType);
+        channels.push_back(extraChannel);
+    }
+
+    // 如果通道多于 5 个（某些遥感图），裁剪它
+    if (channels.size() > 5) {
+        channels.resize(5);
+    }
+    cv::merge(channels, image5C);
+
+    // 统一转为 64F (Double)，方便后续科研计算
+    image5C.convertTo(image5C, CV_64F);
+
+    // 创建并存储对象
+    SatelliteImage satImage(std::to_string(satelliteImages.size()), "1", fileName.toStdString(),
+                            image5C);
+    spdlog::debug("成功创建卫星图像，最终通道数: {}", satImage.getMat().channels());
+    satelliteImages.push_back(satImage);
+
+    // 计算文件大小（MB）
+    QFileInfo fileInfo(fileName);
+    qint64 sizeInBytes = fileInfo.size(); // 获得字节数
+    double sizeInMB = static_cast<double>(sizeInBytes) / (1024 * 1024);
+    satelliteImages.back().updateSize(sizeInMB);
+
+    // UI 更新
+    updateImageComboBox();
+    ui->cbImage->setCurrentIndex(satelliteImages.size() - 1);
+    spdlog::debug("当前选中图像索引: {}", satelliteImages.size() - 1);
+    updateImageInfo();
 }
 
 void MainWindow::on_btnExportImage_clicked() {
+    cheakNullImageError();
     QString fileName = QFileDialog::getSaveFileName(this, "保存遥感影像", "", "Images (*.jpg)");
     if (!fileName.isEmpty()) {
         // 使用 OpenCV 保存图像 (支持 .tif 等遥感格式)
         spdlog::debug("开始保存图像: {}", fileName.toStdString());
-        cv::imwrite(fileName.toStdString(), satelliteImages[0].get8UC3Mat());
+        cv::imwrite(fileName.toStdString(), satelliteImages[selectedSatelliteIndex].get8UC3Mat());
         spdlog::debug("图像保存完成");
     }
 }
 
-void MainWindow::displayImage(const cv::Mat &mat) {
-    spdlog::debug("开始显示图像");
-    cv::Mat displayMat;
-    QImage qimg;
-
-    // 1. 处理通道逻辑：如果是 5 通道，提取前 3 个通道用于显示
-
-    spdlog::debug("检测到 5 通道影像，正在提取前 3 通道 (BGR) 进行显示");
-    displayMat = satelliteImages[0].get8UC3Mat();
-    spdlog::debug("显示图像, 通道数为{}", displayMat.channels());
-
-    // 2. 转换为 Qt 格式
-    if (displayMat.channels() == 3) {
-        cv::Mat rgb;
-        cv::cvtColor(displayMat, rgb, cv::COLOR_BGR2RGB);
-
-        // 注意：使用 rgb.step 确保内存对齐正确
-        qimg = QImage((const unsigned char *)(rgb.data), rgb.cols, rgb.rows, rgb.step,
-                      QImage::Format_RGB888)
-                   .copy(); // .copy() 立即深拷贝内存
-    } else if (displayMat.channels() == 1) {
-        qimg = QImage((const unsigned char *)(displayMat.data), displayMat.cols, displayMat.rows,
-                      displayMat.step, QImage::Format_Indexed8)
-                   .copy();
-    } else {
-        spdlog::error("无法显示通道数为 {} 的图像", displayMat.channels());
+void MainWindow::displayImage() {
+    spdlog::debug("显示图像:{}", selectedSatelliteIndex);
+    cheakNullImageError();
+    cv::Mat mat = satelliteImages[selectedSatelliteIndex].get8UC3Mat();
+    if (mat.empty())
         return;
-    }
 
-    // 3. 更新 UI
-    if (!qimg.isNull()) {
-        ui->labelImage->setAlignment(Qt::AlignCenter);
-        ui->labelImage->setPixmap(QPixmap::fromImage(qimg));
-    }
+    // 1. 确保是 8位 3通道
+    cv::Mat rgb;
+    cv::cvtColor(mat, rgb, cv::COLOR_BGR2RGB);
+
+    // 2. 构造 QImage
+    // 使用 mat.step 来确保内存对齐安全
+    QImage qimg(rgb.data, rgb.cols, rgb.rows, static_cast<int>(rgb.step), QImage::Format_RGB888);
+
+    // 3. 重要：强制深拷贝！
+    // 因为 rgb 是局部变量，如果不 .copy()，qimg 在函数结束时会指向非法内存
+    QPixmap pixmap = QPixmap::fromImage(qimg.copy());
+
+    // 4. 自适应缩放显示到 QLabel 上
+    ui->labelImage->setPixmap(
+        pixmap.scaled(ui->labelImage->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+    spdlog::debug("图像已成功渲染至界面");
 }
 
 void MainWindow::on_btnGaussianBlur_clicked() {
+    cheakNullImageError();
+
     spdlog::debug("高斯模糊");
     double simga = ui->sbSigma->value();
+    if (simga <= 0) {
+        QMessageBox::warning(this, "警告", "高斯模糊半径必须大于 0");
+        return;
+    }
     if (!satelliteImages.empty()) {
-        satelliteImages[0].applyGaussianBlur(simga);
-        displayImage(satelliteImages[0].getMat());
+        satelliteImages[selectedSatelliteIndex].applyGaussianBlur(simga);
+        displayImage();
     }
 }
 
 void MainWindow::on_btnMedianFilter_clicked() {
+    cheakNullImageError();
     spdlog::debug("中值滤波");
     int kernelSize = ui->sbKernelSize->value();
+    if (kernelSize <= 0) {
+        QMessageBox::warning(this, "警告", "内核大小必须大于 0");
+        return;
+    }
     if (!satelliteImages.empty()) {
-        satelliteImages[0].applyMedianFilter(kernelSize);
-        displayImage(satelliteImages[0].getMat());
+        satelliteImages[selectedSatelliteIndex].applyMedianFilter(kernelSize);
+        displayImage();
     }
 }
 
@@ -109,15 +131,24 @@ void MainWindow::on_btnImportPointCloud_clicked() {
     spdlog::debug("导入点云");
     QString fileName = QFileDialog::getOpenFileName(this, "打开点云文件", "", "PLY (*.ply)");
     if (!fileName.isEmpty()) {
-        PointCloudData pointCloud(fileName.toStdString(), fileName.toStdString(),
+        PointCloudData pointCloud(std::to_string(pointClouds.size()), fileName.toStdString(),
                                   fileName.toStdString());
         pointCloud.loadPLY(fileName.toStdString());
-        pointCloud.display();
         pointClouds.push_back(pointCloud);
+        // UI 更新
+        updatePointCloudComboBox();
+        ui->cbPointCloud->setCurrentIndex(pointClouds.size() - 1);
+        spdlog::debug("当前选中点云索引: {}", pointClouds.size() - 1);
+        QFileInfo fileInfo(fileName);
+        qint64 sizeInBytes = fileInfo.size(); // 获得字节数
+        double sizeInMB = static_cast<double>(sizeInBytes) / (1024 * 1024);
+        pointClouds[selectedPointCloudIndex].updateSize(sizeInMB);
+        updatePointCloudInfo();
     }
 }
 
 void MainWindow::on_btnVoxelFilter_clicked() {
+    cheakNullPointCloudError();
     spdlog::debug("体素滤波器");
     double voxelSize = ui->sbVoxelSize->value();
     if (voxelSize <= 0) {
@@ -133,16 +164,68 @@ void MainWindow::on_btnVoxelFilter_clicked() {
 }
 
 void MainWindow::on_btnExportPLY_clicked() {
+    cheakNullPointCloudError();
     spdlog::debug("导出PLY");
     if (!pointClouds.empty()) {
         QString fileName = QFileDialog::getSaveFileName(this, "保存点云文件", "", "PLY (*.ply)");
         if (!fileName.isEmpty()) {
-            if (pointClouds[0].exportDataInPath("PLY", fileName.toStdString()))
+            if (pointClouds[selectedPointCloudIndex].exportDataInPath("PLY",
+                                                                      fileName.toStdString()))
                 spdlog::debug("导出PLY成功");
             else
                 spdlog::error("导出PLY失败");
         }
     }
+}
+
+void MainWindow::updateImageComboBox() {
+    ui->cbImage->clear();
+    for (const auto &satImage : satelliteImages) {
+        ui->cbImage->addItem(satImage.getId().c_str());
+    }
+}
+
+void MainWindow::updatePointCloudComboBox() {
+    ui->cbPointCloud->clear();
+    for (const auto &pointCloud : pointClouds) {
+        ui->cbPointCloud->addItem(pointCloud.getId().c_str());
+    }
+}
+
+void MainWindow::on_cbImage_currentIndexChanged(int index) {
+    selectedSatelliteIndex = index;
+    if (selectedSatelliteIndex != -1) {
+        displayImage();
+    }
+}
+
+void MainWindow::on_cbPointCloud_currentIndexChanged(int index) { selectedPointCloudIndex = index; }
+
+void MainWindow::cheakNullImageError() {
+    if (selectedSatelliteIndex == -1) {
+        QMessageBox::warning(this, "错误", "请先导入图像");
+    }
+}
+
+void MainWindow::cheakNullPointCloudError() {
+    if (selectedPointCloudIndex == -1) {
+        QMessageBox::warning(this, "错误", "请先导入点云");
+    }
+}
+
+void MainWindow::updateImageInfo() {
+    if (selectedSatelliteIndex == -1) {
+        return;
+    }
+    std::string name = std::string(satelliteImages[selectedSatelliteIndex]) + "\n";
+    ui->tbImage->setText(QString(name.c_str()));
+}
+void MainWindow::updatePointCloudInfo() {
+    if (selectedPointCloudIndex == -1) {
+        return;
+    }
+    std::string name = std::string(pointClouds[selectedPointCloudIndex]);
+    ui->tbPointCloud->setText(QString(name.c_str()));
 }
 
 MainWindow::~MainWindow() { delete ui; }

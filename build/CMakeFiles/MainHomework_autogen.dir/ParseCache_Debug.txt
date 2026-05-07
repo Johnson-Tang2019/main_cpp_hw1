@@ -286,11 +286,14 @@ C:/Users/js/Documents/作业/c++/Main_HW/include/MainWindow.h
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QFileDialog
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QLabel
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QMainWindow
+ mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/QMessageBox
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qdialog.h
+ mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qdialogbuttonbox.h
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qfiledialog.h
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qmainwindow.h
+ mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qtabwidget.h
  mdp:C:/Qt/6.11.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h

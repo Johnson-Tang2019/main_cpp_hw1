@@ -102,6 +102,8 @@ class PointCloudData : public DataObject {
     void loadPLY(const std::string &filename);
 
     void deleteErrorPoints();
+
+    void updateSize(double size) { this->size = size; }
 };
 
 #endif // POINTCLOUDDATA_H
