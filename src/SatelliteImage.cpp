@@ -237,8 +237,8 @@ const std::vector<Pixel<double>> &SatelliteImage::operator[](int row) const {
 
 // 类型转换运算符
 SatelliteImage::operator std::string() const {
-    return DataObject::operator std::string() + "\n" + "Size: " + std::to_string(size) + "MB " +
-           " [" + sensorType + " " + std::to_string(width) + "x" + std::to_string(height) + "]";
+    return DataObject::operator std::string() + "\n" + "Sensor Type: " + sensorType + "\n [" +
+           std::to_string(width) + "x" + std::to_string(height) + "]";
 }
 
 // 子图操作
