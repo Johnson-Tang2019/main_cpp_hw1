@@ -1,5 +1,4 @@
-#include <Algorithms.h>
-#include <SatelliteImage.h>
+#include "SatelliteImage.h"
 
 // 构造函数
 SatelliteImage::SatelliteImage(const std::string &id, const std::string &name,

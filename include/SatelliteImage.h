@@ -3,6 +3,7 @@
 #include "DataObject.h"
 #include "Pixel.h"
 #include "spdlog/spdlog.h"
+#include <Algorithms.h>
 #include <chrono>
 #include <ctime>
 #include <format>
