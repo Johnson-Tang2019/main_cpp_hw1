@@ -224,6 +224,7 @@ void MainWindow::on_cbImage_currentIndexChanged(int index) {
     if (selectedSatelliteIndex != -1) {
         displayImage();
     }
+    updateImageInfo();
 }
 
 /** @brief 处理点云下拉菜单索引变化 */
@@ -231,6 +232,7 @@ void MainWindow::on_cbPointCloud_currentIndexChanged(int index) {
     if (index >= 0 && index < pointClouds.size()) {
         selectedPointCloudIndex = index;
     }
+    updatePointCloudInfo();
 }
 
 /** @brief 检查影像是否已导入 */

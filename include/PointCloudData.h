@@ -109,6 +109,7 @@ class PointCloudData : public DataObject {
     /** @brief 索引访问：直接获取或修改单个点 */
     Point3D &operator[](int index);
     const Point3D &operator[](int index) const;
+    operator std::string() const;
 
     void addPoint(const Point3D &point);
     void addPoints(const std::vector<Point3D> &points);

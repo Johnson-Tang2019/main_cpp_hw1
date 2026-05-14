@@ -233,29 +233,6 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Directory under which to collect all populated content
-FETCHCONTENT_BASE_DIR:PATH=C:/Users/js/Documents/作业/c++/Main_HW/build/_deps
-
-//Disables all attempts to download or update content and assumes
-// source dirs already exist
-FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
-
-//Enables QUIET option for all content population
-FETCHCONTENT_QUIET:BOOL=ON
-
-//When not empty, overrides where to find pre-populated content
-// for spdlog
-FETCHCONTENT_SOURCE_DIR_SPDLOG:PATH=
-
-//Enables UPDATE_DISCONNECTED behavior for all content population
-FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
-
-//Enables UPDATE_DISCONNECTED behavior just for population of spdlog
-FETCHCONTENT_UPDATES_DISCONNECTED_SPDLOG:BOOL=OFF
-
-//Git command line client
-GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
-
 //Value Computed by CMake
 MainHomework_BINARY_DIR:STATIC=C:/Users/js/Documents/作业/c++/Main_HW/build
 
@@ -296,107 +273,6 @@ Qt6Widgets_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6Widgets
 //The directory containing a CMake configuration file for Qt6.
 Qt6_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6
 
-//Build all artifacts
-SPDLOG_BUILD_ALL:BOOL=OFF
-
-//Build benchmarks (Requires https://github.com/google/benchmark.git
-// to be installed)
-SPDLOG_BUILD_BENCH:BOOL=OFF
-
-//Build example
-SPDLOG_BUILD_EXAMPLE:BOOL=OFF
-
-//Build header only example
-SPDLOG_BUILD_EXAMPLE_HO:BOOL=OFF
-
-//Build position independent code (-fPIC)
-SPDLOG_BUILD_PIC:BOOL=OFF
-
-//Build shared library
-SPDLOG_BUILD_SHARED:BOOL=OFF
-
-//Build tests
-SPDLOG_BUILD_TESTS:BOOL=OFF
-
-//Build tests using the header only version
-SPDLOG_BUILD_TESTS_HO:BOOL=OFF
-
-//Enable compiler warnings
-SPDLOG_BUILD_WARNINGS:BOOL=OFF
-
-//non supported option
-SPDLOG_CLOCK_COARSE:BOOL=OFF
-
-//Filename postfix for libraries in debug builds
-SPDLOG_DEBUG_POSTFIX:STRING=d
-
-//Disable default logger creation
-SPDLOG_DISABLE_DEFAULT_LOGGER:BOOL=OFF
-
-//Build static or shared library using precompiled header to speed
-// up compilation time
-SPDLOG_ENABLE_PCH:BOOL=OFF
-
-//Use external fmt library instead of bundled
-SPDLOG_FMT_EXTERNAL:BOOL=OFF
-
-//Use external fmt header-only library instead of bundled
-SPDLOG_FMT_EXTERNAL_HO:BOOL=OFF
-
-//Use the unlocked variant of fwrite. Leave this on unless your
-// libc doesn't have it
-SPDLOG_FWRITE_UNLOCKED:BOOL=ON
-
-//Generate the install target
-SPDLOG_INSTALL:BOOL=OFF
-
-//Enable/disable msvc /utf-8 flag required by fmt lib
-SPDLOG_MSVC_UTF8:BOOL=ON
-
-//prevent spdlog from using of std::atomic log levels (use only
-// if your code never modifies log levels concurrently
-SPDLOG_NO_ATOMIC_LEVELS:BOOL=OFF
-
-//Compile with -fno-exceptions. Call abort() on any spdlog exceptions
-SPDLOG_NO_EXCEPTIONS:BOOL=OFF
-
-//prevent spdlog from querying the thread id on each log call if
-// thread id is not needed
-SPDLOG_NO_THREAD_ID:BOOL=OFF
-
-//prevent spdlog from using thread local storage
-SPDLOG_NO_TLS:BOOL=OFF
-
-//Omit %z timezone offset (use on platforms without tm_gmtoff)
-SPDLOG_NO_TZ_OFFSET:BOOL=OFF
-
-//Prevent from child processes to inherit log file descriptors
-SPDLOG_PREVENT_CHILD_FD:BOOL=OFF
-
-//Enable address sanitizer in tests
-SPDLOG_SANITIZE_ADDRESS:BOOL=OFF
-
-//Enable thread sanitizer in tests
-SPDLOG_SANITIZE_THREAD:BOOL=OFF
-
-//Include as system headers (skip for clang-tidy).
-SPDLOG_SYSTEM_INCLUDES:BOOL=OFF
-
-//run clang-tidy
-SPDLOG_TIDY:BOOL=OFF
-
-//Use std::format instead of fmt library.
-SPDLOG_USE_STD_FORMAT:BOOL=OFF
-
-//Support wchar output to console
-SPDLOG_WCHAR_CONSOLE:BOOL=OFF
-
-//Support wchar filenames
-SPDLOG_WCHAR_FILENAMES:BOOL=OFF
-
-//Support wchar api
-SPDLOG_WCHAR_SUPPORT:BOOL=OFF
-
 //Path to a program.
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-NOTFOUND
 
@@ -411,18 +287,6 @@ Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
 
 //Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/Qt/6.11.0/msvc2022_64/bin/windeployqt.exe
-
-//Value Computed by CMake
-spdlog_BINARY_DIR:STATIC=C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-build
-
-//The directory containing a CMake configuration file for spdlog.
-spdlog_DIR:PATH=spdlog_DIR-NOTFOUND
-
-//Value Computed by CMake
-spdlog_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-spdlog_SOURCE_DIR:STATIC=C:/Users/js/Documents/作业/c++/Main_HW/build/_deps/spdlog-src
 
 
 ########################
@@ -587,10 +451,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[C:/Program Files/opencv/build][v4.
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding WrapAtomic
 FIND_PACKAGE_MESSAGE_DETAILS_WrapAtomic:INTERNAL=[1][v()]
-//ADVANCED property for variable: GIT_EXECUTABLE
-GIT_EXECUTABLE-ADVANCED:INTERNAL=1
-//Have symbol _fwrite_nolock
-HAVE_FWRITE_UNLOCKED:INTERNAL=1
 //Test HAVE_STDATOMIC
 HAVE_STDATOMIC:INTERNAL=1
 //Qt feature: abstractbutton (from target Qt6::Widgets)

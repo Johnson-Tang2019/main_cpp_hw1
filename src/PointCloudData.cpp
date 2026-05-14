@@ -13,6 +13,15 @@ Point3D Point3D::operator-(const Point3D &other) const {
                    classification);
 }
 
+// 类型转换运算符
+PointCloudData::operator std::string() const {
+    return DataObject::operator std::string() + "\n" + "Points: " + std::to_string(points.size()) +
+           "\n" + "Bounds: X[" + std::to_string(minX) + ", " + std::to_string(maxX) + "] Y[" +
+           std::to_string(minY) + ", " + std::to_string(maxY) + "] Z[" + std::to_string(minZ) +
+           ", " + std::to_string(maxZ) + "]";
+}
+
+/** @brief 计算点之间的距离 */
 double Point3D::distanceTo(const Point3D &other) const {
     return std::sqrt(std::pow(x - other.x, 2) + std::pow(y - other.y, 2) +
                      std::pow(z - other.z, 2));
@@ -126,52 +135,59 @@ bool PointCloudData::exportData(const std::string &format) const {
 }
 
 bool PointCloudData::exportDataInPath(const std::string &format, const std::string &path) const {
-    // 这里可以根据format参数实现不同格式的导出逻辑
-    std::cout << "Exporting PointCloudData in format: " << format << "\n";
-    std::ofstream outFile(path);
+    // 建议增加：检查点云是否为空
+    if (points.empty()) {
+        spdlog::warn("点云数据为空，跳过导出: {}", path); // 使用你项目中的 spdlog
+        return false;
+    }
 
-    // 导出逻辑
+    // 以文本模式打开文件
+    std::ofstream outFile(path);
+    if (!outFile.is_open()) {
+        std::cerr << "无法创建导出文件: " << path << "\n";
+        return false;
+    }
+
     if (format == "PLY") {
-        // 1. 写入 PLY 头部
+        // 1. 写入标准的 ASCII PLY 头部
         outFile << "ply\n";
         outFile << "format ascii 1.0\n";
         outFile << "element vertex " << points.size() << "\n";
         outFile << "property double x\n";
         outFile << "property double y\n";
         outFile << "property double z\n";
-        // 如果你的 Point3D 包含颜色或法线，可以在此处继续添加 property
+        // 如果需要导出强度，可以在此处添加 property double intensity
         outFile << "end_header\n";
-        // 2. 写入点云数据
-        // 设置精度以防止测量数据丢失
-        outFile << std::fixed << std::setprecision(6);
+
+        // 2. 写入数据：设置高精度以匹配 double 类型
+        // 建议使用 12-15 位精度，6 位对于地理坐标（如经纬度或大数坐标）可能不够
+        outFile << std::fixed << std::setprecision(8); 
+
         for (const auto &pt : points) {
+            // 确保每个点占一行，且坐标间由空格隔开，方便 loadPLY 的 >> 操作符读取
             outFile << pt.x << " " << pt.y << " " << pt.z << "\n";
         }
+        
         outFile.close();
         return true;
 
     } else if (format == "TXT") {
-        // 导出为TXT格式
+        // TXT 格式通常用于人类阅读或特定的报表输出
         outFile << "PointCloudData: " << name << " (" << id << ")\n";
-        outFile << "Path: " << path << "\n";
-        outFile << "Size: " << size << " MB\n";
-        struct tm timeInfo;
-        localtime_s(&timeInfo, &createTime);
-        outFile << "Created: " << std::put_time(&timeInfo, "%Y-%m-%d %H:%M:%S");
-        outFile << "Bounds: X[" << minX << ", " << maxX << "] Y[" << minY << ", " << maxY << "] Z["
-                << minZ << ", " << maxZ << "]\n";
         outFile << "Points: " << points.size() << "\n";
-        for (auto &point : points) {
-            outFile << point.x << " " << point.y << " " << point.z << " " << point.intensity << " "
-                    << point.classification << "\n";
+        
+        // 写入详细信息
+        outFile << std::fixed << std::setprecision(6);
+        for (const auto &point : points) {
+            outFile << point.x << " " << point.y << " " << point.z << " " 
+                    << point.intensity << " " << point.classification << "\n";
         }
-
-    } else {
-        std::cerr << "Unsupported export format: " << format << "\n";
-        return false;
+        outFile.close();
+        return true;
     }
 
-    return true; // 导出成功
+    std::cerr << "不支持的导出格式: " << format << "\n";
+    return false;
 }
 
 // 运算符重载
@@ -281,6 +297,8 @@ PointCloudData PointCloudData::statisticalOutlierRemoval(int k, double stdDev) {
 }
 
 // 统计信息
+
+/** @brief 获取点云平均高度 */
 double PointCloudData::getAverageHeight() const {
     if (points.empty())
         return 0.0;
@@ -289,8 +307,10 @@ double PointCloudData::getAverageHeight() const {
     return sumZ / points.size();
 }
 
+/** @brief 获取点云高度范围 */
 double PointCloudData::getHeightRange() const { return maxZ - minZ; }
 
+/** @brief 打印点云数据统计信息 */
 void PointCloudData::printStatistics() const {
     std::cout << "PointCloudData Statistics:\n";
     std::cout << "Total Points: " << points.size() << "\n";
@@ -300,6 +320,7 @@ void PointCloudData::printStatistics() const {
               << minZ << ", " << maxZ << "]\n";
 }
 
+/** @brief 读取标准 PLY 文件：支持 ASCII 格式解析 */
 bool PointCloudData::loadPLY(const std::string &filename) {
     std::ifstream file(filename, std::ios::binary);
     if (!file.is_open()) {
@@ -349,6 +370,7 @@ bool PointCloudData::loadPLY(const std::string &filename) {
     return true;
 }
 
+/** @brief 手动清理无效点（如坐标为 NaN 或异常远的点） */
 void PointCloudData::deleteErrorPoints() {
     double limit = 1e13; // 1e13 是一个比较大的数值，用于过滤掉异常值
     points.erase(std::remove_if(points.begin(), points.end(),

@@ -24,7 +24,7 @@ events:
       The output was:
       0
       适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-      生成启动时间为 2026/4/23 11:07:12。
+      生成启动时间为 2026/5/14 19:18:01。
       
       节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj”(默认目标)。
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           0 个警告
           0 个错误
       
-      已用时间 00:00:00.39
+      已用时间 00:00:01.10
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -72,8 +72,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-crc868"
-      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-crc868"
+      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-dxba82"
+      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-dxba82"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -83,40 +83,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-crc868'
+        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-dxba82'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c6020.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_fe58d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-        生成启动时间为 2026/4/23 11:07:12。
+        生成启动时间为 2026/5/14 19:18:02。
         
-        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-crc868\\cmTC_c6020.vcxproj”(默认目标)。
+        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dxba82\\cmTC_fe58d.vcxproj”(默认目标)。
         PrepareForBuild:
-          正在创建目录“cmTC_c6020.dir\\Debug\\”。
+          正在创建目录“cmTC_fe58d.dir\\Debug\\”。
           已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
-          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-crc868\\Debug\\”。
-          正在创建目录“cmTC_c6020.dir\\Debug\\cmTC_c6020.tlog\\”。
+          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dxba82\\Debug\\”。
+          正在创建目录“cmTC_fe58d.dir\\Debug\\cmTC_fe58d.tlog\\”。
         InitializeBuildStatus:
-          正在创建“cmTC_c6020.dir\\Debug\\cmTC_c6020.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_c6020.dir\\Debug\\cmTC_c6020.tlog\\unsuccessfulbuild”执行 Touch 任务。
+          正在创建“cmTC_fe58d.dir\\Debug\\cmTC_fe58d.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+          正在对“cmTC_fe58d.dir\\Debug\\cmTC_fe58d.tlog\\unsuccessfulbuild”执行 Touch 任务。
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c6020.dir\\Debug\\\\" /Fd"cmTC_c6020.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_fe58d.dir\\Debug\\\\" /Fd"cmTC_fe58d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35217 版
           版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c6020.dir\\Debug\\\\" /Fd"cmTC_c6020.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_fe58d.dir\\Debug\\\\" /Fd"cmTC_fe58d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-crc868\\Debug\\cmTC_c6020.exe" /INCREMENTAL /ILK:"cmTC_c6020.dir\\Debug\\cmTC_c6020.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-crc868/Debug/cmTC_c6020.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-crc868/Debug/cmTC_c6020.lib" /MACHINE:X64  /machine:x64 cmTC_c6020.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_c6020.vcxproj -> C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-crc868\\Debug\\cmTC_c6020.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dxba82\\Debug\\cmTC_fe58d.exe" /INCREMENTAL /ILK:"cmTC_fe58d.dir\\Debug\\cmTC_fe58d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-dxba82/Debug/cmTC_fe58d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-dxba82/Debug/cmTC_fe58d.lib" /MACHINE:X64  /machine:x64 cmTC_fe58d.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_fe58d.vcxproj -> C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dxba82\\Debug\\cmTC_fe58d.exe
         FinalizeBuildStatus:
-          正在删除文件“cmTC_c6020.dir\\Debug\\cmTC_c6020.tlog\\unsuccessfulbuild”。
-          正在对“cmTC_c6020.dir\\Debug\\cmTC_c6020.tlog\\cmTC_c6020.lastbuildstate”执行 Touch 任务。
-        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-crc868\\cmTC_c6020.vcxproj”(默认目标)的操作。
+          正在删除文件“cmTC_fe58d.dir\\Debug\\cmTC_fe58d.tlog\\unsuccessfulbuild”。
+          正在对“cmTC_fe58d.dir\\Debug\\cmTC_fe58d.tlog\\cmTC_fe58d.lastbuildstate”执行 Touch 任务。
+        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dxba82\\cmTC_fe58d.vcxproj”(默认目标)的操作。
         
         已成功生成。
             0 个警告
             0 个错误
         
-        已用时间 00:00:00.37
+        已用时间 00:00:00.54
         
       exitCode: 0
   -
@@ -162,8 +162,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-6nyjav"
-      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-6nyjav"
+      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-ogzjaw"
+      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-ogzjaw"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -173,40 +173,40 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-6nyjav'
+        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-ogzjaw'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ef972.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4d28b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-        生成启动时间为 2026/4/23 11:07:13。
+        生成启动时间为 2026/5/14 19:18:04。
         
-        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\cmTC_ef972.vcxproj”(默认目标)。
+        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\cmTC_4d28b.vcxproj”(默认目标)。
         PrepareForBuild:
-          正在创建目录“cmTC_ef972.dir\\Debug\\”。
+          正在创建目录“cmTC_4d28b.dir\\Debug\\”。
           已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
-          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\Debug\\”。
-          正在创建目录“cmTC_ef972.dir\\Debug\\cmTC_ef972.tlog\\”。
+          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\Debug\\”。
+          正在创建目录“cmTC_4d28b.dir\\Debug\\cmTC_4d28b.tlog\\”。
         InitializeBuildStatus:
-          正在创建“cmTC_ef972.dir\\Debug\\cmTC_ef972.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_ef972.dir\\Debug\\cmTC_ef972.tlog\\unsuccessfulbuild”执行 Touch 任务。
+          正在创建“cmTC_4d28b.dir\\Debug\\cmTC_4d28b.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+          正在对“cmTC_4d28b.dir\\Debug\\cmTC_4d28b.tlog\\unsuccessfulbuild”执行 Touch 任务。
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_ef972.dir\\Debug\\\\" /Fd"cmTC_ef972.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\src.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_4d28b.dir\\Debug\\\\" /Fd"cmTC_4d28b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\src.cxx"
           用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35217 版
           版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_ef972.dir\\Debug\\\\" /Fd"cmTC_ef972.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\src.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_4d28b.dir\\Debug\\\\" /Fd"cmTC_4d28b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\src.cxx"
           src.cxx
-        C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\src.cxx(1,10): error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\cmTC_ef972.vcxproj]
-        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\cmTC_ef972.vcxproj”(默认目标)的操作 - 失败。
+        C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\src.cxx(1,10): error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\cmTC_4d28b.vcxproj]
+        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\cmTC_4d28b.vcxproj”(默认目标)的操作 - 失败。
         
         生成失败。
         
-        “C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\cmTC_ef972.vcxproj”(默认目标) (1) ->
+        “C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\cmTC_4d28b.vcxproj”(默认目标) (1) ->
         (ClCompile 目标) -> 
-          C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\src.cxx(1,10): error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyjav\\cmTC_ef972.vcxproj]
+          C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\src.cxx(1,10): error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ogzjaw\\cmTC_4d28b.vcxproj]
         
             0 个警告
             1 个错误
         
-        已用时间 00:00:00.22
+        已用时间 00:00:00.42
         
       exitCode: 1
   -
@@ -223,8 +223,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-036csi"
-      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-036csi"
+      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-bkj7io"
+      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-bkj7io"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -234,42 +234,42 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-036csi'
+        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-bkj7io'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d9774.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_05136.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-        生成启动时间为 2026/4/23 11:07:14。
+        生成启动时间为 2026/5/14 19:18:05。
         
-        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\cmTC_d9774.vcxproj”(默认目标)。
+        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\cmTC_05136.vcxproj”(默认目标)。
         PrepareForBuild:
-          正在创建目录“cmTC_d9774.dir\\Debug\\”。
+          正在创建目录“cmTC_05136.dir\\Debug\\”。
           已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
-          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\Debug\\”。
-          正在创建目录“cmTC_d9774.dir\\Debug\\cmTC_d9774.tlog\\”。
+          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\Debug\\”。
+          正在创建目录“cmTC_05136.dir\\Debug\\cmTC_05136.tlog\\”。
         InitializeBuildStatus:
-          正在创建“cmTC_d9774.dir\\Debug\\cmTC_d9774.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_d9774.dir\\Debug\\cmTC_d9774.tlog\\unsuccessfulbuild”执行 Touch 任务。
+          正在创建“cmTC_05136.dir\\Debug\\cmTC_05136.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+          正在对“cmTC_05136.dir\\Debug\\cmTC_05136.tlog\\unsuccessfulbuild”执行 Touch 任务。
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_d9774.dir\\Debug\\\\" /Fd"cmTC_d9774.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\CheckFunctionExists.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_05136.dir\\Debug\\\\" /Fd"cmTC_05136.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\CheckFunctionExists.cxx"
           用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35217 版
           版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_d9774.dir\\Debug\\\\" /Fd"cmTC_d9774.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\CheckFunctionExists.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_05136.dir\\Debug\\\\" /Fd"cmTC_05136.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\CheckFunctionExists.cxx"
           CheckFunctionExists.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\Debug\\cmTC_d9774.exe" /INCREMENTAL /ILK:"cmTC_d9774.dir\\Debug\\cmTC_d9774.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-036csi/Debug/cmTC_d9774.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-036csi/Debug/cmTC_d9774.lib" /MACHINE:X64  /machine:x64 cmTC_d9774.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: 无法打开文件“pthreads.lib” [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\cmTC_d9774.vcxproj]
-        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\cmTC_d9774.vcxproj”(默认目标)的操作 - 失败。
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\Debug\\cmTC_05136.exe" /INCREMENTAL /ILK:"cmTC_05136.dir\\Debug\\cmTC_05136.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-bkj7io/Debug/cmTC_05136.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-bkj7io/Debug/cmTC_05136.lib" /MACHINE:X64  /machine:x64 cmTC_05136.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: 无法打开文件“pthreads.lib” [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\cmTC_05136.vcxproj]
+        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\cmTC_05136.vcxproj”(默认目标)的操作 - 失败。
         
         生成失败。
         
-        “C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\cmTC_d9774.vcxproj”(默认目标) (1) ->
+        “C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\cmTC_05136.vcxproj”(默认目标) (1) ->
         (Link 目标) -> 
-          LINK : fatal error LNK1104: 无法打开文件“pthreads.lib” [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-036csi\\cmTC_d9774.vcxproj]
+          LINK : fatal error LNK1104: 无法打开文件“pthreads.lib” [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bkj7io\\cmTC_05136.vcxproj]
         
             0 个警告
             1 个错误
         
-        已用时间 00:00:00.29
+        已用时间 00:00:00.50
         
       exitCode: 1
   -
@@ -286,8 +286,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-hyj9dl"
-      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-hyj9dl"
+      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-xbz0o4"
+      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-xbz0o4"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -297,42 +297,42 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-hyj9dl'
+        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-xbz0o4'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_45f7c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3583d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-        生成启动时间为 2026/4/23 11:07:14。
+        生成启动时间为 2026/5/14 19:18:05。
         
-        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\cmTC_45f7c.vcxproj”(默认目标)。
+        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\cmTC_3583d.vcxproj”(默认目标)。
         PrepareForBuild:
-          正在创建目录“cmTC_45f7c.dir\\Debug\\”。
+          正在创建目录“cmTC_3583d.dir\\Debug\\”。
           已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
-          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\Debug\\”。
-          正在创建目录“cmTC_45f7c.dir\\Debug\\cmTC_45f7c.tlog\\”。
+          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\Debug\\”。
+          正在创建目录“cmTC_3583d.dir\\Debug\\cmTC_3583d.tlog\\”。
         InitializeBuildStatus:
-          正在创建“cmTC_45f7c.dir\\Debug\\cmTC_45f7c.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_45f7c.dir\\Debug\\cmTC_45f7c.tlog\\unsuccessfulbuild”执行 Touch 任务。
+          正在创建“cmTC_3583d.dir\\Debug\\cmTC_3583d.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+          正在对“cmTC_3583d.dir\\Debug\\cmTC_3583d.tlog\\unsuccessfulbuild”执行 Touch 任务。
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_45f7c.dir\\Debug\\\\" /Fd"cmTC_45f7c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\CheckFunctionExists.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_3583d.dir\\Debug\\\\" /Fd"cmTC_3583d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\CheckFunctionExists.cxx"
           用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35217 版
           版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_45f7c.dir\\Debug\\\\" /Fd"cmTC_45f7c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\CheckFunctionExists.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_3583d.dir\\Debug\\\\" /Fd"cmTC_3583d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\CheckFunctionExists.cxx"
           CheckFunctionExists.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\Debug\\cmTC_45f7c.exe" /INCREMENTAL /ILK:"cmTC_45f7c.dir\\Debug\\cmTC_45f7c.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-hyj9dl/Debug/cmTC_45f7c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-hyj9dl/Debug/cmTC_45f7c.lib" /MACHINE:X64  /machine:x64 cmTC_45f7c.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: 无法打开文件“pthread.lib” [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\cmTC_45f7c.vcxproj]
-        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\cmTC_45f7c.vcxproj”(默认目标)的操作 - 失败。
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\Debug\\cmTC_3583d.exe" /INCREMENTAL /ILK:"cmTC_3583d.dir\\Debug\\cmTC_3583d.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-xbz0o4/Debug/cmTC_3583d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-xbz0o4/Debug/cmTC_3583d.lib" /MACHINE:X64  /machine:x64 cmTC_3583d.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: 无法打开文件“pthread.lib” [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\cmTC_3583d.vcxproj]
+        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\cmTC_3583d.vcxproj”(默认目标)的操作 - 失败。
         
         生成失败。
         
-        “C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\cmTC_45f7c.vcxproj”(默认目标) (1) ->
+        “C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\cmTC_3583d.vcxproj”(默认目标) (1) ->
         (Link 目标) -> 
-          LINK : fatal error LNK1104: 无法打开文件“pthread.lib” [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyj9dl\\cmTC_45f7c.vcxproj]
+          LINK : fatal error LNK1104: 无法打开文件“pthread.lib” [C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xbz0o4\\cmTC_3583d.vcxproj]
         
             0 个警告
             1 个错误
         
-        已用时间 00:00:00.29
+        已用时间 00:00:00.51
         
       exitCode: 1
   -
@@ -354,8 +354,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-s5mim3"
-      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-s5mim3"
+      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-7rjxx5"
+      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-7rjxx5"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -365,99 +365,40 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-s5mim3'
+        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-7rjxx5'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a5b13.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4d328.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-        生成启动时间为 2026/4/23 11:07:14。
+        生成启动时间为 2026/5/14 19:18:07。
         
-        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s5mim3\\cmTC_a5b13.vcxproj”(默认目标)。
+        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7rjxx5\\cmTC_4d328.vcxproj”(默认目标)。
         PrepareForBuild:
-          正在创建目录“cmTC_a5b13.dir\\Debug\\”。
+          正在创建目录“cmTC_4d328.dir\\Debug\\”。
           已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
-          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s5mim3\\Debug\\”。
-          正在创建目录“cmTC_a5b13.dir\\Debug\\cmTC_a5b13.tlog\\”。
+          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7rjxx5\\Debug\\”。
+          正在创建目录“cmTC_4d328.dir\\Debug\\cmTC_4d328.tlog\\”。
         InitializeBuildStatus:
-          正在创建“cmTC_a5b13.dir\\Debug\\cmTC_a5b13.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_a5b13.dir\\Debug\\cmTC_a5b13.tlog\\unsuccessfulbuild”执行 Touch 任务。
+          正在创建“cmTC_4d328.dir\\Debug\\cmTC_4d328.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+          正在对“cmTC_4d328.dir\\Debug\\cmTC_4d328.tlog\\unsuccessfulbuild”执行 Touch 任务。
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_a5b13.dir\\Debug\\\\" /Fd"cmTC_a5b13.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s5mim3\\src.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_4d328.dir\\Debug\\\\" /Fd"cmTC_4d328.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7rjxx5\\src.cxx"
           用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35217 版
           版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_a5b13.dir\\Debug\\\\" /Fd"cmTC_a5b13.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s5mim3\\src.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_4d328.dir\\Debug\\\\" /Fd"cmTC_4d328.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7rjxx5\\src.cxx"
           src.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s5mim3\\Debug\\cmTC_a5b13.exe" /INCREMENTAL /ILK:"cmTC_a5b13.dir\\Debug\\cmTC_a5b13.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-s5mim3/Debug/cmTC_a5b13.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-s5mim3/Debug/cmTC_a5b13.lib" /MACHINE:X64  /machine:x64 cmTC_a5b13.dir\\Debug\\src.obj
-          cmTC_a5b13.vcxproj -> C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s5mim3\\Debug\\cmTC_a5b13.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7rjxx5\\Debug\\cmTC_4d328.exe" /INCREMENTAL /ILK:"cmTC_4d328.dir\\Debug\\cmTC_4d328.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-7rjxx5/Debug/cmTC_4d328.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-7rjxx5/Debug/cmTC_4d328.lib" /MACHINE:X64  /machine:x64 cmTC_4d328.dir\\Debug\\src.obj
+          cmTC_4d328.vcxproj -> C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7rjxx5\\Debug\\cmTC_4d328.exe
         FinalizeBuildStatus:
-          正在删除文件“cmTC_a5b13.dir\\Debug\\cmTC_a5b13.tlog\\unsuccessfulbuild”。
-          正在对“cmTC_a5b13.dir\\Debug\\cmTC_a5b13.tlog\\cmTC_a5b13.lastbuildstate”执行 Touch 任务。
-        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s5mim3\\cmTC_a5b13.vcxproj”(默认目标)的操作。
+          正在删除文件“cmTC_4d328.dir\\Debug\\cmTC_4d328.tlog\\unsuccessfulbuild”。
+          正在对“cmTC_4d328.dir\\Debug\\cmTC_4d328.tlog\\cmTC_4d328.lastbuildstate”执行 Touch 任务。
+        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7rjxx5\\cmTC_4d328.vcxproj”(默认目标)的操作。
         
         已成功生成。
             0 个警告
             0 个错误
         
-        已用时间 00:00:00.41
-        
-      exitCode: 0
-...
-
----
-events:
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
-      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:72 (__CHECK_SYMBOL_EXISTS_IMPL)"
-      - "build/_deps/spdlog-src/CMakeLists.txt:257 (check_symbol_exists)"
-    checks:
-      - "Looking for _fwrite_nolock"
-    directories:
-      source: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-jhqtn6"
-      binary: "C:/Users/js/Documents/\u4f5c\u4e1a/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-jhqtn6"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
-      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-    buildResult:
-      variable: "HAVE_FWRITE_UNLOCKED"
-      cached: true
-      stdout: |
-        Change Dir: 'C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-jhqtn6'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4f054.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        适用于 .NET Framework MSBuild 版本 17.14.23+b0019275e
-        生成启动时间为 2026/4/24 14:06:15。
-        
-        节点 1 上的项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jhqtn6\\cmTC_4f054.vcxproj”(默认目标)。
-        PrepareForBuild:
-          正在创建目录“cmTC_4f054.dir\\Debug\\”。
-          已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
-          正在创建目录“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jhqtn6\\Debug\\”。
-          正在创建目录“cmTC_4f054.dir\\Debug\\cmTC_4f054.tlog\\”。
-        InitializeBuildStatus:
-          正在创建“cmTC_4f054.dir\\Debug\\cmTC_4f054.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_4f054.dir\\Debug\\cmTC_4f054.tlog\\unsuccessfulbuild”执行 Touch 任务。
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4f054.dir\\Debug\\\\" /Fd"cmTC_4f054.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jhqtn6\\CheckSymbolExists.cxx"
-          用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35217 版
-          版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4f054.dir\\Debug\\\\" /Fd"cmTC_4f054.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jhqtn6\\CheckSymbolExists.cxx"
-          CheckSymbolExists.cxx
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jhqtn6\\Debug\\cmTC_4f054.exe" /INCREMENTAL /ILK:"cmTC_4f054.dir\\Debug\\cmTC_4f054.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-jhqtn6/Debug/cmTC_4f054.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/js/Documents/作业/c++/Main_HW/build/CMakeFiles/CMakeScratch/TryCompile-jhqtn6/Debug/cmTC_4f054.lib" /MACHINE:X64  /machine:x64 cmTC_4f054.dir\\Debug\\CheckSymbolExists.obj
-          cmTC_4f054.vcxproj -> C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jhqtn6\\Debug\\cmTC_4f054.exe
-        FinalizeBuildStatus:
-          正在删除文件“cmTC_4f054.dir\\Debug\\cmTC_4f054.tlog\\unsuccessfulbuild”。
-          正在对“cmTC_4f054.dir\\Debug\\cmTC_4f054.tlog\\cmTC_4f054.lastbuildstate”执行 Touch 任务。
-        已完成生成项目“C:\\Users\\js\\Documents\\作业\\c++\\Main_HW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jhqtn6\\cmTC_4f054.vcxproj”(默认目标)的操作。
-        
-        已成功生成。
-            0 个警告
-            0 个错误
-        
-        已用时间 00:00:00.67
+        已用时间 00:00:00.50
         
       exitCode: 0
 ...
