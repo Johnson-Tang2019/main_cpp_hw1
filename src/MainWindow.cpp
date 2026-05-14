@@ -1,10 +1,18 @@
 #include "MainWindow.h"
 
+/**
+ * @brief 构造函数：初始化 UI 并设置窗口基本属性
+ */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     setWindowTitle("RS App");
 }
 
+// =================================================================
+// 1. 遥感影像业务逻辑 (Image Logic)
+// =================================================================
+
+/** @brief 响应导入按钮：处理多通道遥感图并转为科研常用的 64F 格式 */
 void MainWindow::on_btnImport_clicked() {
     QString fileName =
         QFileDialog::getOpenFileName(this, "打开遥感影像", "", "Images (*.png *.jpg *.tif)");
@@ -19,13 +27,14 @@ void MainWindow::on_btnImport_clicked() {
         return;
     }
 
-    // 转换逻辑
+    // --- 通道补齐逻辑 ---
+    // 为了支持后续高阶光谱指数计算，本项目统一使用 5 通道格式
     cv::Mat image5C;
     std::vector<cv::Mat> channels;
     cv::split(image, channels);
     spdlog::debug("原始图像通道数: {}", channels.size());
 
-    // 【改进 2】动态匹配深度补齐通道
+    // 动态匹配深度补齐通道
     // 确保补充的通道与原图深度一致（防止 8位和 16位混合报错）
     int originalType = image.depth();
     while (channels.size() < 5) {
@@ -61,6 +70,7 @@ void MainWindow::on_btnImport_clicked() {
     updateImageInfo();
 }
 
+/** @brief 导入函数：导入遥感影像到程序中 */
 void MainWindow::on_btnExportImage_clicked() {
     cheakNullImageError();
     QString fileName = QFileDialog::getSaveFileName(this, "保存遥感影像", "", "Images (*.jpg)");
@@ -72,6 +82,7 @@ void MainWindow::on_btnExportImage_clicked() {
     }
 }
 
+/** @brief 渲染函数：将 OpenCV Mat 映射到 Qt QLabel 上 */
 void MainWindow::displayImage() {
     spdlog::debug("显示图像:{}", selectedSatelliteIndex);
     cheakNullImageError();
@@ -98,6 +109,7 @@ void MainWindow::displayImage() {
     spdlog::debug("图像已成功渲染至界面");
 }
 
+/** @brief 应用高斯模糊 */
 void MainWindow::on_btnGaussianBlur_clicked() {
     cheakNullImageError();
 
@@ -113,6 +125,7 @@ void MainWindow::on_btnGaussianBlur_clicked() {
     }
 }
 
+/** @brief 应用中值滤波 */
 void MainWindow::on_btnMedianFilter_clicked() {
     cheakNullImageError();
     spdlog::debug("中值滤波");
@@ -127,6 +140,11 @@ void MainWindow::on_btnMedianFilter_clicked() {
     }
 }
 
+// =================================================================
+// 2. 点云业务逻辑 (Point Cloud Logic)
+// =================================================================
+
+/** @brief 导入点云：支持 PLY 格式 */
 void MainWindow::on_btnImportPointCloud_clicked() {
     spdlog::debug("导入点云");
     QString fileName = QFileDialog::getOpenFileName(this, "打开点云文件", "", "PLY (*.ply)");
@@ -147,6 +165,7 @@ void MainWindow::on_btnImportPointCloud_clicked() {
     }
 }
 
+/** @brief 点云下采样（体素滤波） */
 void MainWindow::on_btnVoxelFilter_clicked() {
     cheakNullPointCloudError();
     spdlog::debug("体素滤波器");
@@ -163,6 +182,7 @@ void MainWindow::on_btnVoxelFilter_clicked() {
     }
 }
 
+/** @brief 导出点云：支持 PLY 格式 */
 void MainWindow::on_btnExportPLY_clicked() {
     cheakNullPointCloudError();
     spdlog::debug("导出PLY");
@@ -178,6 +198,11 @@ void MainWindow::on_btnExportPLY_clicked() {
     }
 }
 
+// =================================================================
+// 3. UI 辅助函数 (UI Helpers)
+// =================================================================
+
+/** @brief 更新影像下拉菜单，保持 ID 同步 */
 void MainWindow::updateImageComboBox() {
     ui->cbImage->clear();
     for (const auto &satImage : satelliteImages) {
@@ -185,6 +210,7 @@ void MainWindow::updateImageComboBox() {
     }
 }
 
+/** @brief 更新点云下拉菜单，保持 ID 同步 */
 void MainWindow::updatePointCloudComboBox() {
     ui->cbPointCloud->clear();
     for (const auto &pointCloud : pointClouds) {
@@ -192,6 +218,7 @@ void MainWindow::updatePointCloudComboBox() {
     }
 }
 
+/** @brief 处理影像下拉菜单索引变化 */
 void MainWindow::on_cbImage_currentIndexChanged(int index) {
     selectedSatelliteIndex = index;
     if (selectedSatelliteIndex != -1) {
@@ -199,20 +226,28 @@ void MainWindow::on_cbImage_currentIndexChanged(int index) {
     }
 }
 
-void MainWindow::on_cbPointCloud_currentIndexChanged(int index) { selectedPointCloudIndex = index; }
+/** @brief 处理点云下拉菜单索引变化 */
+void MainWindow::on_cbPointCloud_currentIndexChanged(int index) {
+    if (index >= 0 && index < pointClouds.size()) {
+        selectedPointCloudIndex = index;
+    }
+}
 
+/** @brief 检查影像是否已导入 */
 void MainWindow::cheakNullImageError() {
     if (selectedSatelliteIndex == -1) {
         QMessageBox::warning(this, "错误", "请先导入图像");
     }
 }
 
+/** @brief 检查点云是否已导入 */
 void MainWindow::cheakNullPointCloudError() {
     if (selectedPointCloudIndex == -1) {
         QMessageBox::warning(this, "错误", "请先导入点云");
     }
 }
 
+/** @brief 更新影像信息 */
 void MainWindow::updateImageInfo() {
     if (selectedSatelliteIndex == -1) {
         return;
@@ -220,6 +255,8 @@ void MainWindow::updateImageInfo() {
     std::string name = std::string(satelliteImages[selectedSatelliteIndex]) + "\n";
     ui->tbImage->setText(QString(name.c_str()));
 }
+
+/** @brief 更新点云信息 */
 void MainWindow::updatePointCloudInfo() {
     if (selectedPointCloudIndex == -1) {
         return;
@@ -228,4 +265,5 @@ void MainWindow::updatePointCloudInfo() {
     ui->tbPointCloud->setText(QString(name.c_str()));
 }
 
+/** @brief 析构函数 */
 MainWindow::~MainWindow() { delete ui; }

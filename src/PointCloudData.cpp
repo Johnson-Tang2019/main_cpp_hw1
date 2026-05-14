@@ -300,11 +300,11 @@ void PointCloudData::printStatistics() const {
               << minZ << ", " << maxZ << "]\n";
 }
 
-void PointCloudData::loadPLY(const std::string &filename) {
+bool PointCloudData::loadPLY(const std::string &filename) {
     std::ifstream file(filename, std::ios::binary);
     if (!file.is_open()) {
         spdlog::error("无法打开文件: {}", filename);
-        return;
+        return false;
     }
 
     std::string line;
@@ -346,6 +346,7 @@ void PointCloudData::loadPLY(const std::string &filename) {
     updateBounds();
 
     spdlog::debug("成功加载点云: {} 个点", points.size());
+    return true;
 }
 
 void PointCloudData::deleteErrorPoints() {

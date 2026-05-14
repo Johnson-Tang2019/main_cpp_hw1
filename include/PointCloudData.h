@@ -99,7 +99,7 @@ class PointCloudData : public DataObject {
     double getMinZ() const { return minZ; }
     double getMaxZ() const { return maxZ; }
 
-    void loadPLY(const std::string &filename);
+    bool loadPLY(const std::string &filename);
 
     void deleteErrorPoints();
 
